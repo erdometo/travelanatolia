@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TravelAnatolia | Personalize Your Journey</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(254, 248, 243, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#2e628c",
+                        "on-background": "#1d1b19",
+                        "inverse-surface": "#32302d",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#215882",
+                        "primary-fixed-dim": "#ffb693",
+                        "primary-fixed": "#ffdbcc",
+                        "outline": "#8c7166",
+                        "surface-container": "#f3ede8",
+                        "background": "#fef8f3",
+                        "primary": "#9c3f00",
+                        "surface-tint": "#a04100",
+                        "secondary-fixed-dim": "#9acbfb",
+                        "on-primary-fixed": "#351000",
+                        "surface-container-low": "#f8f3ee",
+                        "surface-container-high": "#ede7e2",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#ded9d4",
+                        "on-surface": "#1d1b19",
+                        "surface": "#fef8f3",
+                        "on-tertiary-fixed-variant": "#7b2c2e",
+                        "outline-variant": "#e0c0b2",
+                        "on-primary-container": "#fffbff",
+                        "inverse-on-surface": "#f6f0eb",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e7e1dd",
+                        "on-secondary-fixed": "#001d32",
+                        "tertiary": "#964141",
+                        "inverse-primary": "#ffb693",
+                        "primary-container": "#c45100",
+                        "surface-variant": "#e7e1dd",
+                        "on-surface-variant": "#584238",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#9dcefe",
+                        "tertiary-container": "#b55958",
+                        "tertiary-fixed-dim": "#ffb3b0",
+                        "surface-bright": "#fef8f3",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#0b4a73",
+                        "on-tertiary-container": "#fffbff",
+                        "secondary-fixed": "#cee5ff",
+                        "tertiary-fixed": "#ffdad8",
+                        "on-tertiary-fixed": "#400107",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#7a3000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-padding-mobile": "20px",
+                        "chat-gap": "12px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "container-padding-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["plusJakartaSans"],
+                        "body-md": ["plusJakartaSans"],
+                        "display-lg": ["notoSerif"],
+                        "headline-lg-mobile": ["notoSerif"],
+                        "headline-lg": ["notoSerif"],
+                        "assistant-voice": ["plusJakartaSans"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "assistant-voice": ["20px", {"lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- Onboarding Navigation suppresses global TopAppBar and BottomNavBar as per "The Destination Rule" -->
+<header class="fixed top-0 w-full z-50 bg-background/50 backdrop-blur-md px-container-padding-mobile md:px-container-padding-desktop h-20 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-primary" data-icon="close">close</span>
+</button>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Question 1 of 4</span>
+<div class="h-1.5 w-32 bg-surface-container-highest rounded-full mt-1 overflow-hidden">
+<div class="h-full bg-primary w-1/4 rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="hidden md:block">
+<span class="font-display-lg text-headline-lg text-primary">TravelAnatolia</span>
+</div>
+<button class="font-label-sm text-label-sm text-primary-container font-bold hover:underline transition-all">
+            SKIP
+        </button>
+</header>
+<main class="flex-grow pt-28 pb-12 px-container-padding-mobile flex flex-col items-center max-w-5xl mx-auto w-full">
+<!-- Conversational Intro -->
+<div class="w-full text-center mb-12">
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-4 leading-tight">
+                What describes your ideal morning in a new city?
+            </h1>
+<p class="font-body-md text-on-surface-variant max-w-lg mx-auto">
+                Help us curate your "Identity Tourism" experience by sharing how you like to start your day.
+            </p>
+</div>
+<!-- Asymmetric Bento Grid for Options -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 w-full">
+<!-- Option 1: Large Feature -->
+<div class="md:col-span-7 group cursor-pointer relative overflow-hidden rounded-xl h-64 md:h-80 shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="absolute inset-0 z-0">
+<img alt="Run club in the morning" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A cinematic low-angle shot of a group of vibrant travelers in modern athletic gear jogging through an ancient cobblestone street in Istanbul at dawn. The soft, warm morning sun creates long shadows and a hazy golden atmosphere. The surrounding architecture is a mix of Ottoman history and contemporary Mediterranean style, emphasizing a clean, light-mode aesthetic with warm terracotta and white tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMPQzMjWXa--XPH_Gy03JKyC6YkijzTLyHh4A7N6DQgrHCrIVwtGIlyjM4NBNh7HM48M4siG9OR6ZVSgxWidz_MbJAQMv0WThr3XPTWcKnRoi6stCjFXZs5CynX8onUUpJw0-_AMOB_xQuHnrAwWceDPXF2iO9e7WDWoWmqHiDZSa1U5zlGdMDA_LNKf7FwlV0pOjUGakBny1o3UbJkwUvJufT-DyFkEEz-TDkyMCYuZdXIzGdtrdtR3L05JB-mc6kihet3vqr8Sjx"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+</div>
+<div class="absolute bottom-0 left-0 p-6 z-10 w-full">
+<div class="glass-panel p-4 rounded-xl flex items-center justify-between border border-white/20">
+<span class="font-assistant-voice text-on-surface font-semibold">A local run club and coffee</span>
+<span class="material-symbols-outlined text-primary" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Option 2: Vertical Accent -->
+<div class="md:col-span-5 group cursor-pointer relative overflow-hidden rounded-xl h-64 md:h-80 shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="absolute inset-0 z-0">
+<img alt="Late brunch scene" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A sophisticated close-up of a sun-drenched Mediterranean brunch table on a marble terrace. The scene features fresh sourdough, artisanal coffee in white ceramic cups, and vibrant citrus fruits. Soft linen textures and olive branches in the background create an atmospheric luxury feel. The lighting is high-key and airy, reflecting a premium travel lifestyle in Turkey." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnYmC1NYhq6jhAUlwaw3bMKj49HfsX5yhM9QGQxUWs2jLLNARIpRtFcTrsWKX01RGWvznHicbS3brk9qSHLRyeEdd12hYigXgl20CTtOmm6AAU15FrHNym89__RVjg9w3OGNmbbqbJqGvA8YH8gTd9d4zERkcTT5hgMwet8SZACB8L9kDvl0mRlNBHL-77WYIDo_nzzuk-DKrn83VHatqcdwBy1w3a9FgJNNMjjE4F5ydC8tvp4B5Vvg4kTdqTIucl97A1OFHDi-Kt"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+</div>
+<div class="absolute bottom-0 left-0 p-6 z-10 w-full">
+<div class="glass-panel p-4 rounded-xl flex items-center justify-between border border-white/20">
+<span class="font-assistant-voice text-on-surface font-semibold">Late brunch &amp; a slow museum visit</span>
+<span class="material-symbols-outlined text-primary" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Option 3: Landscape Half -->
+<div class="md:col-span-6 group cursor-pointer relative overflow-hidden rounded-xl h-64 md:h-72 shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="absolute inset-0 z-0">
+<img alt="Street food exploration" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="An inviting street food stall in a bustling historic district of Anatolia, showcasing steam rising from freshly baked simit and colorful spices. The morning light is crisp and clear, illuminating the organic textures of the wooden stall and ceramic plates. The overall vibe is authentic yet curated, with a focus on local gastronomy and hidden gems, styled with warm Mediterranean highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDga8NakXtK0SOVTuKVIY588aOnB67ekxdHN8bphFKSIxZhmV28-OPWTRAluPVXFeUASjjaZhRlFPjYOFkhhTthDUci6ciUumxMzHDSJWgi-MOvbZfcYoPHAzUkjW-tLX6cofxfEyeC_cmyJf01FE_eToBm4pC7NLNts614JKwcf-k4W6lPzNOo7sEdrDK9u33TM8oopoGeSBrs2R6lzMFbTOszCFj_Mj9AhpC1sIYyao-NyKMV5fvpvXb7UcXVVcX7fT5tOKqNPMrK"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+</div>
+<div class="absolute bottom-0 left-0 p-6 z-10 w-full">
+<div class="glass-panel p-4 rounded-xl flex items-center justify-between border border-white/20">
+<span class="font-assistant-voice text-on-surface font-semibold">Exploring hidden street food spots</span>
+<span class="material-symbols-outlined text-primary" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Option 4: Landscape Half -->
+<div class="md:col-span-6 group cursor-pointer relative overflow-hidden rounded-xl h-64 md:h-72 shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="absolute inset-0 z-0">
+<img alt="Historical tour" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A grand perspective of the Hagia Sophia or similar majestic Byzantine architecture bathed in soft, morning side-lighting. A knowledgeable guide is gesturing towards intricate architectural details. The image has a deep, atmospheric luxury quality with rich earth tones, emphasizing history and heritage. The composition is clean and focused, fitting for an expert-led travel application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1h0orZP0hwY53tFWIbfUHh2uwTaThIBUw5ZmaUq_KvoY7E6XOKgLwZr1glm18WErCSOiQ8zIMkgOH4FqrRT8cQ9GqVwxOZPQCoDYaatVxfWMqC0C9hro2vMQ0tzU63wE5cpMPh0uVBPuvErFnKy2QBNoN_zGSG2oHKWwjHii1111W2qWhsJuqy_B77dYwSpQFiuld_zNEFlmiUilSm27dMOn3K5NhlilsAKm0HndcKbGzqZgG-5TZbribQpRlAQOTBJ_PQHX8mLFW"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+</div>
+<div class="absolute bottom-0 left-0 p-6 z-10 w-full">
+<div class="glass-panel p-4 rounded-xl flex items-center justify-between border border-white/20">
+<span class="font-assistant-voice text-on-surface font-semibold">A guided historical tour</span>
+<span class="material-symbols-outlined text-primary" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Conversational Footer -->
+<footer class="mt-16 text-center w-full max-w-md">
+<div class="flex items-center justify-center gap-3 mb-8">
+<div class="h-px bg-outline-variant flex-grow"></div>
+<span class="font-label-sm text-on-surface-variant">OR</span>
+<div class="h-px bg-outline-variant flex-grow"></div>
+</div>
+<button class="w-full h-14 bg-surface-container-high rounded-full flex items-center justify-center gap-3 hover:bg-surface-container-highest transition-colors group">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="edit">edit</span>
+<span class="font-body-md text-on-surface-variant">Something else entirely...</span>
+</button>
+</footer>
+</main>
+<!-- Floating Navigation (Contextual FAB Suppression as per "The Filter") -->
+<div class="fixed bottom-10 left-1/2 -translate-x-1/2 z-50 flex items-center gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-label-sm text-label-sm shadow-xl hover:bg-primary-container transition-all active:scale-95 duration-200 flex items-center gap-2 group">
+            NEXT QUESTION
+            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="trending_flat">trending_flat</span>
+</button>
+</div>
+</body></html>

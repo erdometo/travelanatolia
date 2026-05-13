@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TravelAnatolia - Notification &amp; Activity Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#b55958",
+                    "surface-dim": "#ded9d4",
+                    "inverse-primary": "#ffb693",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#fef8f3",
+                    "secondary-container": "#9dcefe",
+                    "primary-container": "#c45100",
+                    "on-secondary-container": "#215882",
+                    "on-tertiary-fixed-variant": "#7b2c2e",
+                    "tertiary-fixed-dim": "#ffb3b0",
+                    "surface-container": "#f3ede8",
+                    "surface-variant": "#e7e1dd",
+                    "surface-bright": "#fef8f3",
+                    "surface-tint": "#a04100",
+                    "surface": "#fef8f3",
+                    "on-secondary-fixed-variant": "#0b4a73",
+                    "primary-fixed": "#ffdbcc",
+                    "outline": "#8c7166",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#fffbff",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#ede7e2",
+                    "secondary": "#2e628c",
+                    "primary": "#9c3f00",
+                    "on-primary-fixed-variant": "#7a3000",
+                    "secondary-fixed": "#cee5ff",
+                    "primary-fixed-dim": "#ffb693",
+                    "on-surface": "#1d1b19",
+                    "tertiary-fixed": "#ffdad8",
+                    "outline-variant": "#e0c0b2",
+                    "on-surface-variant": "#584238",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#964141",
+                    "on-tertiary-container": "#fffbff",
+                    "on-secondary-fixed": "#001d32",
+                    "on-background": "#1d1b19",
+                    "surface-container-low": "#f8f3ee",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#351000",
+                    "inverse-on-surface": "#f6f0eb",
+                    "on-tertiary-fixed": "#400107",
+                    "inverse-surface": "#32302d",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#e7e1dd",
+                    "secondary-fixed-dim": "#9acbfb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "container-padding-desktop": "40px",
+                    "gutter": "24px",
+                    "chat-gap": "12px",
+                    "container-padding-mobile": "20px"
+            },
+            "fontFamily": {
+                    "headline-lg": [
+                            "Noto Serif"
+                    ],
+                    "body-md": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "label-sm": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "display-lg": [
+                            "Noto Serif"
+                    ],
+                    "headline-lg-mobile": [
+                            "Noto Serif"
+                    ],
+                    "assistant-voice": [
+                            "Plus Jakarta Sans"
+                    ]
+            },
+            "fontSize": {
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "assistant-voice": [
+                            "20px",
+                            {
+                                    "lineHeight": "30px",
+                                    "letterSpacing": "0.01em",
+                                    "fontWeight": "500"
+                            }
+                    ]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #fef8f3;
+            background-image: radial-gradient(circle at top right, rgba(157, 206, 254, 0.15) 0%, transparent 40%),
+                              radial-gradient(circle at bottom left, rgba(196, 81, 0, 0.08) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-background font-body-md antialiased min-h-screen relative">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface-container/70 backdrop-blur-xl border-b border-outline-variant/20 shadow-sm flex justify-between items-center px-container-padding-mobile md:px-container-padding-desktop h-16 transition-all duration-300">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/30 shadow-sm">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVZElS9t42GpoFyf82ftJhDMRgha9rY-mnCqmC54OgTLF1OwSKLUSLzKPD_1Fis4yl6EDM3W-yoGVw3cx08NwKbt_GOQcaGtoA7osUIDduST_t6sKhmdwloLxjXsGXpdMTKSzuj332IXjUaB1mm3lVAYLNlf4xDMoVlwEa2ypY-rvvG7rqz0QzdVvzyVO2FHvTUx6nUBTRJiJmkAJyRGapJkZRQODlVr3zBo8k8ZpveItIxDhKf_xJ1M3XlLyfahslJn-RND25b8L5"/>
+</div>
+</div>
+<div class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary dark:text-primary-fixed-dim tracking-tight">TravelAnatolia</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-primary/5 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">notifications</span>
+</button>
+</header>
+<!-- Main Content Area -->
+<main class="pt-24 pb-32 px-container-padding-mobile md:px-container-padding-desktop max-w-3xl mx-auto">
+<!-- Header Section -->
+<div class="mb-8">
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-2">Activity Center</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Stay updated with real-time insights and itinerary alerts from ANA.</p>
+</div>
+<!-- Recent Group -->
+<section class="mb-10">
+<h2 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-4 opacity-80">Recent</h2>
+<div class="flex flex-col gap-4">
+<!-- Notification: ANA Car Alert -->
+<div class="group relative bg-surface-container-lowest/60 backdrop-blur-xl border border-white/60 shadow-[0_4px_30px_rgba(46,98,140,0.05)] rounded-xl p-5 flex gap-4 items-start transition-all duration-300 hover:shadow-[0_8px_40px_rgba(46,98,140,0.1)] hover:-translate-y-0.5 cursor-pointer overflow-hidden">
+<!-- Unread Indicator -->
+<div class="absolute top-0 left-0 w-1.5 h-full bg-primary rounded-l-xl"></div>
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">directions_car</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<span class="font-label-sm text-label-sm text-primary">ANA Update</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant opacity-60">Just now</span>
+</div>
+<p class="font-assistant-voice text-assistant-voice text-on-background">Your private car is 5 minutes away.</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 text-sm">Your driver, Mehmet, is approaching in a Black Mercedes Vito. License plate: 34 TR 2024.</p>
+</div>
+</div>
+<!-- Notification: Booking Confirmed -->
+<div class="group relative bg-surface-container-lowest/60 backdrop-blur-xl border border-white/60 shadow-[0_4px_30px_rgba(46,98,140,0.05)] rounded-xl p-5 flex gap-4 items-start transition-all duration-300 hover:shadow-[0_8px_40px_rgba(46,98,140,0.1)] hover:-translate-y-0.5 cursor-pointer">
+<!-- Unread Indicator -->
+<div class="absolute top-0 left-0 w-1.5 h-full bg-secondary rounded-l-xl"></div>
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-secondary-container/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">check_circle</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<span class="font-label-sm text-label-sm text-secondary">Booking Confirmed</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant opacity-60">2h ago</span>
+</div>
+<p class="font-assistant-voice text-assistant-voice text-on-background">Pottery Masterclass</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 text-sm">You're all set for tomorrow at 10:00 AM in Avanos. The master artisan will be expecting you.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Earlier Group -->
+<section>
+<h2 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-4 opacity-80">Earlier</h2>
+<div class="flex flex-col gap-4">
+<!-- Notification: Local Tip -->
+<div class="group bg-surface-container/40 backdrop-blur-md border border-white/40 rounded-xl p-5 flex gap-4 items-start transition-all duration-300 hover:bg-surface-container/60 cursor-pointer">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-tertiary-container/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[24px]">lightbulb</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<span class="font-label-sm text-label-sm text-tertiary">Local Tip</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant opacity-60">Yesterday</span>
+</div>
+<p class="font-assistant-voice text-assistant-voice text-on-background">The Bosphorus is perfect for a run tonight.</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 text-sm">The weather has cooled down beautifully. I recommend the route starting from Bebek park towards Rumeli Fortress.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface/80 dark:bg-surface-container-highest/80 backdrop-blur-2xl border-t border-white/10 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] flex justify-around items-center h-20 pb-safe px-4 rounded-t-xl md:hidden">
+<!-- Explore -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-300 ease-out cursor-pointer">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-label-sm text-label-sm mt-1">Explore</span>
+</div>
+<!-- ANA (Active Intent given Notifications are from ANA) -->
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1.5 active:scale-90 duration-300 ease-out cursor-pointer shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">assistant</span>
+<span class="font-label-sm text-label-sm mt-1">ANA</span>
+</div>
+<!-- Itinerary -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-300 ease-out cursor-pointer">
+<span class="material-symbols-outlined">event_note</span>
+<span class="font-label-sm text-label-sm mt-1">Itinerary</span>
+</div>
+<!-- Profile -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-300 ease-out cursor-pointer">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm mt-1">Profile</span>
+</div>
+</nav>
+</body></html>

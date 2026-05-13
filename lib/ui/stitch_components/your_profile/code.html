@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TravelAnatolia - Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#e7e1dd",
+                    "secondary-fixed-dim": "#9acbfb",
+                    "on-primary-fixed": "#351000",
+                    "inverse-on-surface": "#f6f0eb",
+                    "on-tertiary-fixed": "#400107",
+                    "inverse-surface": "#32302d",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#964141",
+                    "surface-container-low": "#f8f3ee",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#fffbff",
+                    "on-secondary-fixed": "#001d32",
+                    "on-background": "#1d1b19",
+                    "tertiary-fixed": "#ffdad8",
+                    "on-surface": "#1d1b19",
+                    "secondary-fixed": "#cee5ff",
+                    "primary-fixed-dim": "#ffb693",
+                    "primary": "#9c3f00",
+                    "on-primary-fixed-variant": "#7a3000",
+                    "on-secondary": "#ffffff",
+                    "on-surface-variant": "#584238",
+                    "outline-variant": "#e0c0b2",
+                    "on-primary-container": "#fffbff",
+                    "primary-fixed": "#ffdbcc",
+                    "outline": "#8c7166",
+                    "error": "#ba1a1a",
+                    "surface-container-high": "#ede7e2",
+                    "secondary": "#2e628c",
+                    "on-primary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#f3ede8",
+                    "surface": "#fef8f3",
+                    "on-secondary-fixed-variant": "#0b4a73",
+                    "surface-tint": "#a04100",
+                    "surface-variant": "#e7e1dd",
+                    "surface-bright": "#fef8f3",
+                    "primary-container": "#c45100",
+                    "secondary-container": "#9dcefe",
+                    "tertiary-fixed-dim": "#ffb3b0",
+                    "on-tertiary-fixed-variant": "#7b2c2e",
+                    "on-secondary-container": "#215882",
+                    "on-error": "#ffffff",
+                    "tertiary-container": "#b55958",
+                    "surface-dim": "#ded9d4",
+                    "inverse-primary": "#ffb693",
+                    "background": "#fef8f3",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-padding-desktop": "40px",
+                    "unit": "8px",
+                    "container-padding-mobile": "20px",
+                    "gutter": "24px",
+                    "chat-gap": "12px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Noto Serif", "serif"],
+                    "assistant-voice": ["Plus Jakarta Sans", "sans-serif"],
+                    "display-lg": ["Noto Serif", "serif"],
+                    "label-sm": ["Plus Jakarta Sans", "sans-serif"],
+                    "headline-lg": ["Noto Serif", "serif"],
+                    "body-md": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "assistant-voice": ["20px", {"lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(254, 248, 243, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm flex items-center justify-between px-container-padding-mobile h-16">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary hover:bg-surface-container-high/50 transition-colors p-2 rounded-full active:scale-95 duration-200">arrow_back</button>
+<h1 class="font-display-lg text-headline-lg text-primary">TravelAnatolia</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20">
+<img class="w-full h-full object-cover" data-alt="A close-up portrait of a sophisticated male traveler in his late 30s, with a gentle and warm expression. The lighting is soft and golden, characteristic of a Mediterranean sunset. He is wearing a high-quality linen shirt in a neutral sand color. The background is softly blurred, showing the warm terracotta textures of an ancient Turkish village. The overall aesthetic is premium, clean, and welcoming." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLysiTy0038FVPAxfvi6y72g_zprcoIu06La8GmKBZulVCpHFuezsocwum2VYb-HQTJnnszenlHbBbmaHyMnsVnVID9RVF3lTrAQBTGJHEEG91FunanKpmf3LPj4C_82r4nvSpRTsc-dhvHLjg7vVD-ed-eB5efZY_PuV4e8zolLARushq-tIR-brFF4spLNmMy4Pb8HDPwvMxwcjSsNnaUfMlZdEUOPtlAeNCcNfY3uBQVjtwO6_Oax3NrPlgW7VL4QJQQMyaycJA"/>
+</div>
+</header>
+<main class="pt-24 px-container-padding-mobile max-w-4xl mx-auto space-y-10">
+<!-- Profile Header Section -->
+<section class="flex flex-col items-center text-center space-y-4">
+<div class="relative">
+<div class="w-32 h-32 rounded-full p-1 bg-gradient-to-tr from-primary to-secondary-container">
+<img class="w-full h-full object-cover rounded-full border-4 border-surface" data-alt="A detailed headshot of a stylish traveler with a friendly demeanor, set against a backdrop of warm-toned Mediterranean architecture. The image features high-key lighting that emphasizes a clean and sophisticated vibe. The color palette is composed of soft creams, rich terracottas, and deep blues, reflecting the brand's atmospheric luxury and identity tourism philosophy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYrvTPkAGeaM4U7vQOrpnTcsfpTa3VwiJYkyXAU-u_BeNRZbHcZnS6mrJkUqibglS0MP-g5lge12Kc9YOPEc74GFMcLTMphNNCo91GXD8jqZI1N9Szh9FVHG8hKo5U8PiEr6CMB1a_As-ooj5awzmp3xOZV0d43ebgv5X_uONP-Mfz-0R510-RbBCrr8HSUHg2Ly4m_2nQQCnYT2RuiZDIYfifTc4pe6dAMv-8PZnjF7faYfeUwHVtbRCSHDsLJXakS9M5wibbcuTu"/>
+</div>
+<div class="absolute bottom-0 right-0 bg-primary text-on-primary w-8 h-8 rounded-full flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</div>
+</div>
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Selim Caner</h2>
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm mt-2">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+                    The Cultural Epicurean
+                </div>
+</div>
+</section>
+<!-- Bento Grid for Stats and Quick Links -->
+<section class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="glass-panel p-4 rounded-xl flex flex-col items-center justify-center text-center">
+<span class="font-headline-lg text-primary">12</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Cities Explored</span>
+</div>
+<div class="glass-panel p-4 rounded-xl flex flex-col items-center justify-center text-center">
+<span class="font-headline-lg text-primary">45</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Saved Spots</span>
+</div>
+<div class="glass-panel p-4 rounded-xl flex flex-col items-center justify-center text-center">
+<span class="font-headline-lg text-primary">8</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Past Journeys</span>
+</div>
+<div class="glass-panel p-4 rounded-xl flex flex-col items-center justify-center text-center">
+<span class="font-headline-lg text-primary">4.9</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Host Rating</span>
+</div>
+</section>
+<!-- Saved Spots Section -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-lg text-headline-lg-mobile text-on-surface">Saved Spots</h3>
+<button class="text-primary font-label-sm text-label-sm">View All</button>
+</div>
+<div class="flex gap-4 overflow-x-auto pb-4 -mx-container-padding-mobile px-container-padding-mobile no-scrollbar">
+<!-- Card 1 -->
+<div class="min-w-[260px] glass-panel rounded-xl overflow-hidden group">
+<div class="h-40 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A serene view of a hidden courtyard garden in a boutique Ottoman-style hotel. Sunlight filters through lush grapevine leaves, casting dappled shadows on ancient stone tiles. The lighting is warm and atmospheric, evoking a sense of calm and local secret luxury. The color palette emphasizes deep greens, earthy browns, and soft white marble." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8rBLKU_EG6A2i3C3WaxwTUpMANQfl5diZn0SGHhCzBSw1kIfEkfP9O-9Ijyx3F6z7qH0jxvCmCPVIShFLi9hCl8RheRt0gE7ePcDJC6DkV3mRgeGbLoJBM9KNce5qZxf3KI3UNmsQO9XfLGJDw3RHNMVX8dPtcQMgJG7jP3NifaqZHfEFKU6CE9xqoV0Fj1-w3L8riRdepX3AZyYyNbAfutru3LHIjR9xXn6w7KKBFVD5LAvrPRrr4KJ1hmyqQiQVq7ru7tEt0aQh"/>
+<div class="absolute top-3 left-3 px-2 py-1 glass-panel rounded-lg text-label-sm font-label-sm text-primary">Local Secret</div>
+</div>
+<div class="p-4 space-y-1">
+<p class="font-label-sm text-label-sm text-primary">Istanbul</p>
+<h4 class="font-body-md font-bold text-on-surface">Serefiye Cistern Garden</h4>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="min-w-[260px] glass-panel rounded-xl overflow-hidden group">
+<div class="h-40 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An inviting table set at a high-end restaurant overlooking the Bosphorus in Turkey. The scene is illuminated by soft, dim candlelight and the distant twinkling lights of the city bridge. The aesthetic is atmospheric luxury, with premium tableware and deep blue tones reflecting off the water. The mood is intimate and sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1tlXnPB9jhNWYAT5204eGCKy3nEBVSpIKpeb-TVys0h9WgZYZqmNCg7f8qc5G7SHzz9RJnMCtRaF4USNHRomzODe4ypgnB1I-pgiRlFRWka7PWD_7jCRrFJXa8an21FhLbbyREDgD00jwv5GoCP5xK9K5kOc8-yxzvuNN9pyydMj2VJ6VPVe4qxU0p2gzsOHuXUzYXn_x2kKYrXuyBXNaYYyekjZEJhr0T4s1DImGCclVw0MzVo1CDYXQqE26eOwebnLhWSC0ZRDe"/>
+<div class="absolute top-3 left-3 px-2 py-1 glass-panel rounded-lg text-label-sm font-label-sm text-primary">Gastronomy</div>
+</div>
+<div class="p-4 space-y-1">
+<p class="font-label-sm text-label-sm text-primary">Bodrum</p>
+<h4 class="font-body-md font-bold text-on-surface">Aegean Sunset Lounge</h4>
+</div>
+</div>
+</div>
+</section>
+<!-- Past Journeys - List Style -->
+<section class="space-y-4">
+<h3 class="font-headline-lg text-headline-lg-mobile text-on-surface">Past Journeys</h3>
+<div class="space-y-3">
+<div class="glass-panel p-4 rounded-xl flex items-center gap-4 hover:bg-surface-container-high/50 transition-all cursor-pointer">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A cinematic wide shot of hot air balloons rising over the fairy chimneys of Cappadocia at dawn. The sky is painted in soft pastels of pink, orange, and pale blue. The lighting is airy and ethereal, capturing the magic of high-end travel. The style is clean, modern, and evocative of identity tourism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK362XMt0rdrtwNkdZyNILEe4j1rpTf4XC22EfLtd9oWLYsrDgcf8IZYZ68ydjUTqdAwv8HGfCk2wmBXNzkR-nANizm5s1FfA36hP0c5Wbw0s2aoB1NiwiizrCIQUb2xojZzSG6wD--QeHPRDnv4s9g5_ApMOe18YUv5u2qVtU418TOCRBlQ8O1z-wAH1wjJPKIg9Mj-EuywoiUnlvQcKRSyhTVg6dzBVjPPcBmj5RK-Kc1lRoJZLyViXmZvJFMRY6Jb2QxMvTAq5g"/>
+</div>
+<div class="flex-1">
+<h4 class="font-body-md font-bold text-on-surface">Cappadocia Discovery</h4>
+<p class="text-label-sm font-label-sm text-on-surface-variant">May 2023 • 5 Days</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+<div class="glass-panel p-4 rounded-xl flex items-center gap-4 hover:bg-surface-container-high/50 transition-all cursor-pointer">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Detail of intricate blue ceramic tiles from an ancient mosque in Izmir, Turkey. The lighting is natural and crisp, highlighting the textures and vibrant patterns of the hand-woven history. The color palette is dominated by deep Mediterranean blues and turquoise, set against a clean white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO9_kmCmXHbgwBUdgl7aXJeiv-r__g5UaOLNCLLHADp2S2CDh8TeH-9TXQfz-Vxpaz39jTsEdggEoOCCzFH6qKCAmo6dtsnIn_YskvVe8FNwjPi8JuZtZ0OauxD4nENIg07ZRO3VxpDApMrwbuXdge1Q6ZdaKa3nAhK4jwIBW-2OtQm1T6nw20JpDg4WJYf0Z14ehcUmVU6zOVXZ-2ZajE4FwFTlF4IwGHsq9Zmf4o2kOK9vhbFuhqaBUd5Etybe7Dxr2PX4axhoYi"/>
+</div>
+<div class="flex-1">
+<h4 class="font-body-md font-bold text-on-surface">The Pearl of Aegean</h4>
+<p class="text-label-sm font-label-sm text-on-surface-variant">September 2022 • 3 Days</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Preferences & Social -->
+<section class="space-y-4">
+<h3 class="font-headline-lg text-headline-lg-mobile text-on-surface">Preferences</h3>
+<div class="glass-panel rounded-2xl overflow-hidden divide-y divide-outline-variant/20">
+<div class="p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">share</span>
+</div>
+<div>
+<p class="font-body-md font-bold text-on-surface">Connected Accounts</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Instagram, Twitter linked</p>
+</div>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant">arrow_forward</button>
+</div>
+<div class="p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed-dim/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary">restaurant</span>
+</div>
+<div>
+<p class="font-body-md font-bold text-on-surface">Dietary Restrictions</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Vegetarian, No Gluten</p>
+</div>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant">arrow_forward</button>
+</div>
+<div class="p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed-dim/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">history_edu</span>
+</div>
+<div>
+<p class="font-body-md font-bold text-on-surface">Travel Interests</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant">History, Local Artisans</p>
+</div>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant">arrow_forward</button>
+</div>
+</div>
+</section>
+<!-- Settings CTA -->
+<section class="pt-4">
+<button class="w-full flex items-center justify-center gap-2 py-4 bg-surface-container-high rounded-xl text-on-surface-variant font-body-md active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined">settings</span>
+                Global Application Settings
+            </button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-2xl shadow-xl rounded-t-xl">
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:text-primary transition-all active:scale-90 duration-300">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-label-sm text-label-sm">Explore</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:text-primary transition-all active:scale-90 duration-300">
+<span class="material-symbols-outlined">chat_spark</span>
+<span class="font-label-sm text-label-sm">Assistant</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:text-primary transition-all active:scale-90 duration-300">
+<span class="material-symbols-outlined">map</span>
+<span class="font-label-sm text-label-sm">Itinerary</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary font-bold active:scale-90 duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</button>
+</nav>
+</body></html>

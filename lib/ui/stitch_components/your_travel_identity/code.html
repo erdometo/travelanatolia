@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Identity Results - TravelAnatolia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#b55958",
+                        "surface-dim": "#ded9d4",
+                        "inverse-primary": "#ffb693",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#fef8f3",
+                        "secondary-container": "#9dcefe",
+                        "primary-container": "#c45100",
+                        "on-secondary-container": "#215882",
+                        "on-tertiary-fixed-variant": "#7b2c2e",
+                        "tertiary-fixed-dim": "#ffb3b0",
+                        "surface-container": "#f3ede8",
+                        "surface-variant": "#e7e1dd",
+                        "surface-bright": "#fef8f3",
+                        "surface-tint": "#a04100",
+                        "surface": "#fef8f3",
+                        "on-secondary-fixed-variant": "#0b4a73",
+                        "primary-fixed": "#ffdbcc",
+                        "outline": "#8c7166",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#fffbff",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#ede7e2",
+                        "secondary": "#2e628c",
+                        "primary": "#9c3f00",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "secondary-fixed": "#cee5ff",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-surface": "#1d1b19",
+                        "tertiary-fixed": "#ffdad8",
+                        "outline-variant": "#e0c0b2",
+                        "on-surface-variant": "#584238",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#964141",
+                        "on-tertiary-container": "#fffbff",
+                        "on-secondary-fixed": "#001d32",
+                        "on-background": "#1d1b19",
+                        "surface-container-low": "#f8f3ee",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#351000",
+                        "inverse-on-surface": "#f6f0eb",
+                        "on-tertiary-fixed": "#400107",
+                        "inverse-surface": "#32302d",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e7e1dd",
+                        "secondary-fixed-dim": "#9acbfb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-padding-desktop": "40px",
+                        "gutter": "24px",
+                        "chat-gap": "12px",
+                        "container-padding-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Noto Serif", "serif"],
+                        "body-md": ["Plus Jakarta Sans", "sans-serif"],
+                        "label-sm": ["Plus Jakarta Sans", "sans-serif"],
+                        "display-lg": ["Noto Serif", "serif"],
+                        "headline-lg-mobile": ["Noto Serif", "serif"],
+                        "assistant-voice": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "assistant-voice": ["20px", { "lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-body-md text-body-md antialiased pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-surface/70 dark:bg-surface-container/70 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-outline-variant/20 shadow-sm flex justify-between items-center px-container-padding-mobile md:px-container-padding-desktop h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="hover:bg-primary/5 transition-colors active:scale-95 duration-200 p-2 rounded-full text-on-surface-variant dark:text-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">close</span>
+</button>
+</div>
+<div class="font-headline-lg text-primary dark:text-primary-fixed-dim tracking-tight">
+            TravelAnatolia
+        </div>
+<div class="flex items-center gap-4">
+<button class="hover:bg-primary/5 transition-colors active:scale-95 duration-200 p-2 rounded-full text-on-surface-variant dark:text-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">share</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 px-container-padding-mobile md:px-container-padding-desktop max-w-[1280px] mx-auto min-h-screen flex flex-col justify-center pb-24 md:pb-16">
+<div class="text-center max-w-3xl mx-auto mb-12">
+<p class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest mb-4">Your Travel Identity</p>
+<h1 class="font-display-lg text-display-lg text-primary mb-6">The Cultural Epicurean</h1>
+<p class="font-assistant-voice text-assistant-voice text-on-surface-variant">
+                A seeker of hidden histories and refined tastes. You find meaning in the stories behind the artifacts, the origins of the spices, and the quiet dignity of ancient ruins before the crowds arrive.
+            </p>
+</div>
+<!-- Identity Traits Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16">
+<!-- Trait Card 1 -->
+<div class="relative overflow-hidden rounded-2xl aspect-[4/5] md:aspect-square group shadow-[0_8px_30px_rgba(181,89,88,0.05)] border border-surface-variant/50">
+<div class="absolute inset-0 bg-surface-container-high/40 mix-blend-multiply z-10"></div>
+<img alt="Artisan" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A close-up, highly detailed photograph of traditional Turkish ceramic tiles being painted by hand. The scene is brightly lit with a warm, natural light-mode aesthetic, highlighting the rich cobalt blues and terracotta reds of the paint against the pristine white ceramic. The mood is artisanal and focused, capturing the essence of cultural heritage and meticulous craftsmanship in a sophisticated, premium style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7Ha1pS6fB-B-2YHSO0_AttAL8z9t-WSAu1ufkG-ELa6lpLdaBfe3JCEmkGG04lBSC64Ip9ucwGMhuxN_gsbOPibcLFoLg5BP1JiR5WP8sueZYAHkfzcB5ubZE0H1ca54slJY4EVBDS_F0RlxQC8EHUHSwSuTRve3KSDnuWCS0ziDwU7r62NMUUIkYVnNzhgjnY9i0SaxR3FHZPHnboyyydmPtLkAKlUnmBWw1eEeoZExh4Pp-_fcfJ2DGxEckXO0u6o1NaQJDMaan"/>
+<div class="absolute inset-0 z-20 flex flex-col justify-between p-6 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+<div class="self-start px-3 py-1 bg-surface/70 backdrop-blur-md rounded-full border border-white/20">
+<span class="font-label-sm text-label-sm text-on-surface">92% Match</span>
+</div>
+<div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-surface-container-lowest mb-2">Artisan</h3>
+<p class="font-body-md text-body-md text-surface-container-lowest/80">Drawn to authentic craftsmanship and local creators.</p>
+</div>
+</div>
+</div>
+<!-- Trait Card 2 -->
+<div class="relative overflow-hidden rounded-2xl aspect-[4/5] md:aspect-square group shadow-[0_8px_30px_rgba(181,89,88,0.05)] border border-surface-variant/50">
+<div class="absolute inset-0 bg-surface-container-high/40 mix-blend-multiply z-10"></div>
+<img alt="Gastronomy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A top-down view of a lavishly spread Turkish breakfast on a rustic wooden table. The lighting is soft, morning sunlight creating a warm, inviting light-mode aesthetic. The scene features small ceramic bowls filled with olives, cheeses, honey, and fresh bread, accented by deep terracotta reds and warm earthy tones. The composition is organic and abundant, reflecting a sophisticated culinary experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtjMHOO5HWBs-e02lGELZjD4d5N_hx8VvNlFVLkQKoWPv7bL8AKweRzFQpbHGGkG5BeTlTbMnQS1NgAfjpA_FSgAmOg3AzE7r8BlCTWTAxGYyiunt6SYEXmet75SU_O4oYMo8hmz1Ebefhjh6FqTiSAMBlaZNg-oqAv7wspxnIWhT2ae69eYEdCd1EzlRDaTahaNMf1uA7OYZMdkfJh4eGRiQDpr0UZKQuGNmgNvJ3pa1lCYQtzS19ObJPPm5zASx-J0r7IE8n6tz9"/>
+<div class="absolute inset-0 z-20 flex flex-col justify-between p-6 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+<div class="self-start px-3 py-1 bg-surface/70 backdrop-blur-md rounded-full border border-white/20">
+<span class="font-label-sm text-label-sm text-on-surface">88% Match</span>
+</div>
+<div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-surface-container-lowest mb-2">Gastronomy</h3>
+<p class="font-body-md text-body-md text-surface-container-lowest/80">Exploring culture through flavor, spices, and local dining.</p>
+</div>
+</div>
+</div>
+<!-- Trait Card 3 -->
+<div class="relative overflow-hidden rounded-2xl aspect-[4/5] md:aspect-square group shadow-[0_8px_30px_rgba(181,89,88,0.05)] border border-surface-variant/50">
+<div class="absolute inset-0 bg-surface-container-high/40 mix-blend-multiply z-10"></div>
+<img alt="Heritage" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A breathtaking view of the ancient ruins of Ephesus bathed in the golden hour light. The sun casts long, soft shadows, highlighting the intricate carvings on the marble columns in a warm, inviting light-mode aesthetic. The color palette features warm creams, terracotta, and soft stone hues against a clear sky. The mood is majestic, timeless, and deeply connected to historical heritage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIMnE8LGP0oSy1oW6XwKEPADdwdEuPW5L7UXNkRQv9735tjqEt-8pZ4qLq3O4O7iPT_p2FWvgz858uRT-FnFUn48Mmhk28sh9pRcyGPCmj_racr4YUdwOzc8j3YYb2Iy_rlNfdVqrHgi5wC6jsG_o0CHoQvu0ppz8GsXaBBBe3sk2FJiGd6YZE_Pd9-zwbvE3Euqhk_7z7LIVJvg3A_y9Yozqp0KWZZE1Vcm-23oABJZ3lEbV6izBH9AB1hLxRM4B90OmdCmsScc9k"/>
+<div class="absolute inset-0 z-20 flex flex-col justify-between p-6 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+<div class="self-start px-3 py-1 bg-surface/70 backdrop-blur-md rounded-full border border-white/20">
+<span class="font-label-sm text-label-sm text-on-surface">95% Match</span>
+</div>
+<div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-surface-container-lowest mb-2">Heritage</h3>
+<p class="font-body-md text-body-md text-surface-container-lowest/80">Fascinated by ancient narratives and architectural marvels.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- CTA Section -->
+<div class="text-center max-w-2xl mx-auto flex flex-col items-center">
+<div class="mb-8 p-6 bg-surface-container-low/50 backdrop-blur-xl rounded-2xl border border-surface-variant w-full relative overflow-hidden">
+<div class="absolute -right-10 -top-10 w-32 h-32 bg-secondary-container/20 rounded-full blur-3xl"></div>
+<div class="absolute -left-10 -bottom-10 w-32 h-32 bg-tertiary-container/10 rounded-full blur-3xl"></div>
+<span class="material-symbols-outlined text-primary mb-4" style="font-variation-settings: 'FILL' 1; font-size: 32px;">assistant</span>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 relative z-10">
+                    "I've tailored a journey specifically for your epicurean soul, focusing on hidden artisans in the Grand Bazaar and private tastings in Cappadocia."
+                </p>
+<button class="bg-primary hover:bg-primary-container text-on-primary rounded-full px-8 py-4 font-label-sm text-label-sm transition-all shadow-[0_4px_14px_rgba(156,63,0,0.3)] hover:shadow-[0_6px_20px_rgba(156,63,0,0.4)] flex items-center justify-center gap-2 mx-auto relative z-10">
+                    Let ANA start curating
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0; font-size: 18px;">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+</body></html>

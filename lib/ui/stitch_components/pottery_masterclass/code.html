@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TravelAnatolia - Anatolian Pottery Course</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#b55958",
+                        "surface-dim": "#ded9d4",
+                        "inverse-primary": "#ffb693",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#fef8f3",
+                        "secondary-container": "#9dcefe",
+                        "primary-container": "#c45100",
+                        "on-secondary-container": "#215882",
+                        "on-tertiary-fixed-variant": "#7b2c2e",
+                        "tertiary-fixed-dim": "#ffb3b0",
+                        "surface-container": "#f3ede8",
+                        "surface-variant": "#e7e1dd",
+                        "surface-bright": "#fef8f3",
+                        "surface-tint": "#a04100",
+                        "surface": "#fef8f3",
+                        "on-secondary-fixed-variant": "#0b4a73",
+                        "primary-fixed": "#ffdbcc",
+                        "outline": "#8c7166",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#fffbff",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#ede7e2",
+                        "secondary": "#2e628c",
+                        "primary": "#9c3f00",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "secondary-fixed": "#cee5ff",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-surface": "#1d1b19",
+                        "tertiary-fixed": "#ffdad8",
+                        "outline-variant": "#e0c0b2",
+                        "on-surface-variant": "#584238",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#964141",
+                        "on-tertiary-container": "#fffbff",
+                        "on-secondary-fixed": "#001d32",
+                        "on-background": "#1d1b19",
+                        "surface-container-low": "#f8f3ee",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#351000",
+                        "inverse-on-surface": "#f6f0eb",
+                        "on-tertiary-fixed": "#400107",
+                        "inverse-surface": "#32302d",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e7e1dd",
+                        "secondary-fixed-dim": "#9acbfb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-padding-desktop": "40px",
+                        "gutter": "24px",
+                        "chat-gap": "12px",
+                        "container-padding-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Noto Serif", "serif"],
+                        "body-md": ["Plus Jakarta Sans", "sans-serif"],
+                        "label-sm": ["Plus Jakarta Sans", "sans-serif"],
+                        "display-lg": ["Noto Serif", "serif"],
+                        "headline-lg-mobile": ["Noto Serif", "serif"],
+                        "assistant-voice": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "assistant-voice": ["20px", { "lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom, 20px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-body-md text-body-md antialiased selection:bg-primary/20 selection:text-primary">
+<nav class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface-container/70 backdrop-blur-xl border-b border-outline-variant/20 shadow-sm flex justify-between items-center px-container-padding-mobile md:px-container-padding-desktop h-16 transition-all duration-300">
+<div class="flex items-center justify-center w-10 h-10 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant/30 hover:bg-primary/5 transition-colors cursor-pointer active:scale-95 duration-200">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="A close-up, high-quality portrait photograph of a confident traveler smiling warmly. The lighting is soft and natural, suggesting a bright Mediterranean morning. The background is a beautifully blurred, warm-toned landscape, seamlessly blending with the earthy, atmospheric luxury aesthetic of the TravelAnatolia brand. The mood is welcoming and sophisticated, perfectly capturing the essence of the 'Sophisticated Travel Buddy' persona." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBnNs0GcOgbe_1gtbfP8S7Tr1mSLzwsF4pL6CkO5qUyPSmhJzQORoTexlLSSBRdnr-9BWrGDXFvA0E42RaQ0F49KwQrGvf7mvpScd0ozCvZjJXrxGIPy6sxBzcOgXdBLNqsp7xWqAhwVQZKLZ9lJgClQbLRjDBzVzm9QNYN5iP0GN8rB-sxCXzAht5j3i5-KCEKkFB5WT7CwcyBbVgKVQw8fwQXZERXwrk85kn9bJxMObjtgeTNx_GE4FxLxB-W-hz7IJXTRYWwctp"/>
+</div>
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary dark:text-primary-fixed-dim tracking-tight">TravelAnatolia</h1>
+<button aria-label="notifications" class="w-10 h-10 flex items-center justify-center rounded-full text-primary dark:text-primary-fixed-dim hover:bg-primary/5 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</nav>
+<main class="w-full pb-[120px]">
+<section class="relative w-full h-[574px] min-h-[500px]">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A breathtaking, wide-angle photograph of a traditional pottery workshop in Cappadocia, Turkey. The scene is bathed in warm, golden-hour sunlight filtering through small, dusty windows, highlighting the rich terracotta colors of the wet clay and intricately finished pots. The atmosphere is rustic, authentic, and steeped in heritage, perfectly capturing the 'Identity Tourism' aesthetic with deep, earthy tones and a profound sense of timeless, local craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRWbXkEN7BeqAhyTn8mEiwZ86ZYqrgljpxFGkvgKDIGJqhvhsr9Hy1MLhgQppBHlFPZj-gNlFN_YS1ErVppLR1tA-kQ6JvZCaVqXhpokUg5gVvjLCn37aL4_K3q4D646lsy1rZY1InUsdYw_Uv-VE648RI4pwPN5T5YQbTlT1diSW5e8F1BskEgZgOoJAyIKSGwt2qLuq6IdGK--N-8UP3YQ3_5UJ6TXxQx3O4xJzPQ3QADjEo25K4VrPIk0buXmlka0-rSbjfiCEn"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-container-padding-mobile md:p-container-padding-desktop flex flex-col gap-unit max-w-screen-xl mx-auto md:left-1/2 md:-translate-x-1/2">
+<div class="inline-flex items-center gap-2 bg-surface/40 backdrop-blur-md border border-white/30 rounded-full px-4 py-1.5 w-max shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider">Local Secret</span>
+</div>
+<h2 class="font-display-lg text-display-lg text-on-surface drop-shadow-sm mt-2">Anatolian Pottery Course</h2>
+<div class="flex items-center gap-4 mt-2">
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1.5 bg-surface/50 backdrop-blur-sm px-3 py-1 rounded-full w-max">
+<span class="material-symbols-outlined text-[18px]">location_on</span> Avanos, Cappadocia
+                    </p>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1.5 bg-surface/50 backdrop-blur-sm px-3 py-1 rounded-full w-max">
+<span class="material-symbols-outlined text-[18px]">schedule</span> 3 Hours
+                    </p>
+</div>
+</div>
+</section>
+<div class="max-w-screen-xl mx-auto px-container-padding-mobile md:px-container-padding-desktop py-gutter flex flex-col gap-12 mt-4">
+<section class="flex flex-col md:flex-row gap-gutter">
+<div class="flex-1 flex flex-col gap-chat-gap">
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">The Experience</h3>
+<p class="font-assistant-voice text-assistant-voice text-on-surface-variant leading-relaxed">
+                        Step into a cavernous workshop carved directly from the soft volcanic rock of Cappadocia. Here, the red clay of the Kızılırmak River has been shaped by human hands since the era of the Hittites. This is not just a class; it is a profound dialogue with the earth and history.
+                    </p>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed mt-2">
+                        Under the guidance of a master artisan, you will learn the rhythmic, almost meditative process of operating a traditional kick-wheel. Feel the cool, raw clay transform beneath your fingers as you are guided through techniques passed down through generations. Whether you craft a simple bowl or attempt an intricate wine jug, the piece you create will hold the unique fingerprint of your journey in Anatolia.
+                    </p>
+</div>
+<div class="w-full md:w-1/3 bg-surface-container-low rounded-2xl p-6 border border-outline-variant/30 shadow-[0_8px_30px_rgba(156,63,0,0.03)] flex flex-col gap-4">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/20">
+<img alt="Master Galip" class="w-full h-full object-cover" data-alt="A warm, engaging portrait photograph of an elderly Turkish master potter in his workshop. He wears a clay-dusted apron over a simple linen shirt, his face lined with years of experience and a welcoming, grandfatherly smile. The background is softly blurred, showing shelves of drying pottery in a warmly lit, cave-like setting. The lighting is cinematic and natural, reinforcing the 'Atmospheric Luxury' and deep heritage focus of the design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNCrTGJ3k7SrqA7wA0HtKlVCGMcCwbcJZwihVWmXrPdtqpUoXF1-UPzIJY32r1sPjG-NAKkCjqWn0sJo0UpWgjvtYsVEvZ8wyQQpqs07oRmp2GErcHPQc4UEV4AkyxnVT4l3HpLQk2JYx1FxT5rndQXpln8tUKNgRG1EOeVBLh0arvprZENsWRfp5N-iGPamyEWyRtT3eJV5WDvY5Bu6rRl_UciLxup7eO6fMnSL6BGClTjSqYHzLAWPLmr640_vV4PGehptCL5J0N"/>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-1">Your Host</h4>
+<p class="font-headline-lg text-[20px] font-semibold text-on-surface leading-tight">Master Galip</p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">
+                        A sixth-generation potter whose hands hold the secrets of Avanos clay. Galip speaks little English, but his warm laughter and patient gestures transcend language, making every guest feel like family.
+                    </p>
+</div>
+</section>
+<section class="flex flex-col gap-6">
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">What's Included</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-surface-container rounded-xl p-5 border border-outline-variant/20 flex flex-col gap-3 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-secondary text-[32px]" style="font-variation-settings: 'FILL' 1;">palette</span>
+<h4 class="font-assistant-voice text-[18px] font-semibold text-on-surface">Premium Materials</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Unlimited red river clay, use of traditional kick-wheels, and professional firing of one selected piece to take home.</p>
+</div>
+<div class="bg-surface-container rounded-xl p-5 border border-outline-variant/20 flex flex-col gap-3 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-secondary text-[32px]" style="font-variation-settings: 'FILL' 1;">local_cafe</span>
+<h4 class="font-assistant-voice text-[18px] font-semibold text-on-surface">Anatolian Hospitality</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Continuous service of traditional Turkish black tea (çay) and locally sourced sweet treats throughout the workshop.</p>
+</div>
+<div class="bg-surface-container rounded-xl p-5 border border-outline-variant/20 flex flex-col gap-3 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-secondary text-[32px]" style="font-variation-settings: 'FILL' 1;">directions_car</span>
+<h4 class="font-assistant-voice text-[18px] font-semibold text-on-surface">Seamless Transit</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Complimentary round-trip transportation from any boutique cave hotel within the Göreme, Uçhisar, or Ürgüp areas.</p>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-6">
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Location</h3>
+<div class="w-full h-[300px] rounded-2xl overflow-hidden border border-outline-variant/30 relative shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A highly stylized, minimal satellite map or top-down view of the Avanos region in Cappadocia, Turkey. The image is treated with a warm, sepia-toned glassmorphic filter, blending earthy terracotta and soft sandstone colors to match the app's 'Atmospheric Luxury' UI style. The winding Kızılırmak River is subtly highlighted. The overall aesthetic is elegant, clean, and seamlessly integrated with a light-mode, heritage-focused travel application design." data-location="Cappadocia" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUbp9QL7utTGf7zYbmXhD5x0XgjrZPVC5BsfZ3I73Zfv7tl0A0eTKvT84b3MIGB6QL8XLd4VvunMwoXHdIQkVhxNd-tluPKYGIrYENlfRGxt4UQjg5Wgu9ZJk4vOHixqVdD0YBVSVHn1n-dye8AEeloNKS1Q07EyQJpyrNRwv_MlnuCRtR8XtlLugNU79gDMALFot4CjHuhJ5PYpIv-muarYOwzVqCK7dr6gFuWAslR_v7zfIDR1j2LPxPInfT38r2oQLV25hwfPyK"/>
+<div class="absolute inset-0 bg-primary/5 pointer-events-none"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(156,63,0,0.4)] animate-pulse">
+<span class="material-symbols-outlined text-on-primary" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<div class="fixed bottom-0 w-full z-50 bg-surface/80 dark:bg-surface-container-highest/80 backdrop-blur-2xl border-t border-white/20 shadow-[0_-8px_30px_rgba(0,0,0,0.08)] px-container-padding-mobile md:px-container-padding-desktop py-4 pb-safe flex justify-between items-center transition-all duration-300">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Per Person</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-lg text-[24px] font-bold text-on-surface">€65</span>
+<span class="font-body-md text-sm text-on-surface-variant">EUR</span>
+</div>
+</div>
+<button class="bg-primary hover:bg-primary-container text-on-primary font-label-sm text-[14px] px-8 py-3.5 rounded-full shadow-[0_4px_20px_rgba(156,63,0,0.3)] hover:shadow-[0_6px_24px_rgba(156,63,0,0.5)] transition-all active:scale-95 duration-200 flex items-center gap-2">
+            Book Experience
+            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</body></html>

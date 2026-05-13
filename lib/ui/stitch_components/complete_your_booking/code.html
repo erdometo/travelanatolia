@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout - TravelAnatolia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#b55958",
+                        "surface-dim": "#ded9d4",
+                        "inverse-primary": "#ffb693",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#fef8f3",
+                        "secondary-container": "#9dcefe",
+                        "primary-container": "#c45100",
+                        "on-secondary-container": "#215882",
+                        "on-tertiary-fixed-variant": "#7b2c2e",
+                        "tertiary-fixed-dim": "#ffb3b0",
+                        "surface-container": "#f3ede8",
+                        "surface-variant": "#e7e1dd",
+                        "surface-bright": "#fef8f3",
+                        "surface-tint": "#a04100",
+                        "surface": "#fef8f3",
+                        "on-secondary-fixed-variant": "#0b4a73",
+                        "primary-fixed": "#ffdbcc",
+                        "outline": "#8c7166",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#fffbff",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#ede7e2",
+                        "secondary": "#2e628c",
+                        "primary": "#9c3f00",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "secondary-fixed": "#cee5ff",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-surface": "#1d1b19",
+                        "tertiary-fixed": "#ffdad8",
+                        "outline-variant": "#e0c0b2",
+                        "on-surface-variant": "#584238",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#964141",
+                        "on-tertiary-container": "#fffbff",
+                        "on-secondary-fixed": "#001d32",
+                        "on-background": "#1d1b19",
+                        "surface-container-low": "#f8f3ee",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#351000",
+                        "inverse-on-surface": "#f6f0eb",
+                        "on-tertiary-fixed": "#400107",
+                        "inverse-surface": "#32302d",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e7e1dd",
+                        "secondary-fixed-dim": "#9acbfb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-padding-desktop": "40px",
+                        "gutter": "24px",
+                        "chat-gap": "12px",
+                        "container-padding-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["notoSerif"],
+                        "body-md": ["plusJakartaSans"],
+                        "label-sm": ["plusJakartaSans"],
+                        "display-lg": ["notoSerif"],
+                        "headline-lg-mobile": ["notoSerif"],
+                        "assistant-voice": ["plusJakartaSans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "assistant-voice": ["20px", { "lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased pb-32">
+<!-- TopAppBar -->
+<header class="bg-surface/70 dark:bg-surface-container/70 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-outline-variant/20 shadow-sm flex justify-between items-center px-container-padding-mobile md:px-container-padding-desktop h-16">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/30 flex-shrink-0">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="A sophisticated, high-quality portrait photo of a stylish traveler smiling gently, framed in a circle. Soft natural lighting, conveying a warm and friendly travel companion vibe. Light background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEmspt5HxHmTFfauJK3Vmr1ASwAcllVmiGv3ZlJ94Kd5X0h3MfG70QFAt4d2S01f22Ob_fPxA8bKDiQnoORUtIjACp1nwPoISlBrRSLJfqZY2cU5o621tN4QD4AU6Hz-fDLeodXSIGE0lsQic7iEzoV8EwvO3oXNuHCdONa7l7n9wZrRruO5ACQdgpI2d13xw5n3-Ru-scRe-_Xqh2FpUJHFKdSEkmNv8fVtMMqHtpRfFyKVOgHEHLe2P8xrg91Ph1z2VvtEQOz2ME"/>
+</div>
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary dark:text-primary-fixed-dim tracking-tight">TravelAnatolia</h1>
+<button aria-label="notifications" class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:bg-primary/5 transition-colors active:scale-95 duration-200 rounded-full">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="pt-24 px-container-padding-mobile md:px-container-padding-desktop max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter relative">
+<!-- Left Column: Details & Payment -->
+<div class="md:col-span-7 flex flex-col gap-8">
+<!-- Page Title -->
+<div>
+<h2 class="font-display-lg text-display-lg text-on-background mb-2">Checkout</h2>
+<p class="font-assistant-voice text-assistant-voice text-on-surface-variant">Almost there. Please review your booking details.</p>
+</div>
+<!-- Booking Summary Card (Bento Style) -->
+<section class="bg-surface-container-low/80 backdrop-blur-xl border border-white/40 shadow-[0_8px_30px_rgba(46,98,140,0.05)] rounded-xl overflow-hidden flex flex-col sm:flex-row relative">
+<!-- Glassmorphic Tag -->
+<div class="absolute top-4 left-4 z-10 bg-surface/80 backdrop-blur-md border border-white/50 rounded-full px-3 py-1 flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="stars">stars</span>
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider">Premium Experience</span>
+</div>
+<div class="w-full sm:w-2/5 h-48 sm:h-auto bg-surface-variant relative">
+<img alt="Amphitheater Sunset" class="w-full h-full object-cover" data-alt="A breathtaking, wide-angle view of an ancient Roman amphitheater in Anatolia during a vibrant sunset. The sky is a rich gradient of deep orange, soft pink, and Mediterranean blue. Warm, golden-hour light illuminates the ancient stone seating. The mood is magical, premium, and sophisticated, perfectly capturing an atmospheric luxury travel aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy4RtMfOhqcinNGZGOghLjqbbHyYd81Bsu3Ph1D_MPOeZpDzYipsu2wzjJ1VHb8zhIV68zC8ZIYp7FV7IHmCKXXeEuqpy4rBR2nZa5OaZm5QMDjglflekaNf5GvMqDz-xPCEMzprmASuXIGy3uKq8Sh_AccYFGFjaXA_FgOjsGwK-wlD-AKVOX6GX6VejsvmnQWSLw77r2hJLnd5Djmff-3Mzfs0bpNrvbHL84Q6_Eu7SC-42Ut0evbs3SwIoPjmHN32K9Q1OtpV4S"/>
+</div>
+<div class="p-6 flex flex-col justify-between w-full sm:w-3/5">
+<div>
+<h3 class="font-headline-lg text-[24px] leading-[32px] font-semibold text-on-background mb-4">Amphitheater Sunset Concert</h3>
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary" data-icon="calendar_today">calendar_today</span>
+<span class="font-body-md text-body-md">Saturday, October 14th</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary" data-icon="schedule">schedule</span>
+<span class="font-body-md text-body-md">18:30 - 21:00</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary" data-icon="group">group</span>
+<span class="font-body-md text-body-md">2 Travelers</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Payment Method Selection -->
+<section class="flex flex-col gap-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary" data-icon="payment">payment</span>
+<h3 class="font-assistant-voice text-assistant-voice text-on-background">Payment Method</h3>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Option 1: Saved Card -->
+<label class="cursor-pointer relative">
+<input checked="" class="peer sr-only" name="payment" type="radio"/>
+<div class="h-full p-4 rounded-xl border-2 border-outline-variant/30 bg-surface-container-lowest hover:bg-surface-container-low transition-colors peer-checked:border-primary peer-checked:bg-primary-fixed/20 flex flex-col gap-3 shadow-sm">
+<div class="flex justify-between items-center w-full">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="credit_card">credit_card</span>
+<div class="w-5 h-5 rounded-full border-2 border-outline peer-checked:border-primary flex items-center justify-center">
+<div class="w-2.5 h-2.5 rounded-full bg-primary opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+</div>
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-on-background">Visa ending in 4242</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Expires 12/25</p>
+</div>
+</div>
+</label>
+<!-- Option 2: Apple Pay -->
+<label class="cursor-pointer relative">
+<input class="peer sr-only" name="payment" type="radio"/>
+<div class="h-full p-4 rounded-xl border-2 border-outline-variant/30 bg-surface-container-lowest hover:bg-surface-container-low transition-colors peer-checked:border-primary peer-checked:bg-primary-fixed/20 flex flex-col gap-3 shadow-sm">
+<div class="flex justify-between items-center w-full">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="account_balance_wallet">account_balance_wallet</span>
+<div class="w-5 h-5 rounded-full border-2 border-outline peer-checked:border-primary flex items-center justify-center">
+<div class="w-2.5 h-2.5 rounded-full bg-primary opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+</div>
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-on-background">Apple Pay</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Fast &amp; Secure</p>
+</div>
+</div>
+</label>
+</div>
+</section>
+</div>
+<!-- Right Column: Price Breakdown & Action (Sticky on Desktop) -->
+<div class="md:col-span-5 relative">
+<div class="sticky top-28 bg-surface-container-low/60 backdrop-blur-xl border border-white/30 rounded-xl p-6 shadow-[0_8px_30px_rgba(0,0,0,0.03)] flex flex-col gap-6">
+<h3 class="font-assistant-voice text-assistant-voice text-on-background border-b border-outline-variant/20 pb-4">Price Breakdown</h3>
+<div class="flex flex-col gap-4 font-body-md text-body-md text-on-surface-variant">
+<div class="flex justify-between items-center">
+<span>Experience (2x €120)</span>
+<span>€240.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span>Service Fee</span>
+<span>€15.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span>Local Taxes</span>
+<span>€18.50</span>
+</div>
+</div>
+<div class="border-t border-outline-variant/20 pt-4 flex justify-between items-end">
+<div class="flex flex-col">
+<span class="font-headline-lg text-[24px] leading-[32px] text-on-background">Total</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">EUR, inclusive of VAT</span>
+</div>
+<span class="font-display-lg text-[32px] leading-[40px] text-primary">€273.50</span>
+</div>
+<!-- Trust Signal -->
+<div class="flex items-center justify-center gap-2 mt-2 py-3 bg-secondary-fixed/30 rounded-lg text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]" data-icon="lock">lock</span>
+<span class="font-label-sm text-label-sm">Payments are secure and encrypted</span>
+</div>
+<!-- Desktop Action Button -->
+<button class="hidden md:flex w-full bg-primary hover:bg-surface-tint text-on-primary py-4 rounded-full font-body-md text-body-md font-semibold justify-center items-center gap-2 shadow-[0_4px_20px_rgba(156,63,0,0.25)] transition-all active:scale-95 mt-2">
+<span>Confirm Booking</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="check_circle">check_circle</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Mobile Fixed Bottom Action Bar -->
+<div class="md:hidden fixed bottom-0 left-0 w-full bg-surface/90 backdrop-blur-2xl border-t border-outline-variant/20 p-container-padding-mobile pb-safe z-40 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+<button class="w-full bg-primary text-on-primary py-4 rounded-full font-body-md text-body-md font-semibold flex justify-center items-center gap-2 shadow-[0_4px_20px_rgba(156,63,0,0.25)] active:scale-95 transition-transform">
+<span>Confirm Booking - €273.50</span>
+</button>
+</div>
+</body></html>

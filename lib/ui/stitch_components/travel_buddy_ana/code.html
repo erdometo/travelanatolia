@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "secondary": "#2e628c",
+                  "on-background": "#1d1b19",
+                  "inverse-surface": "#32302d",
+                  "on-error": "#ffffff",
+                  "on-secondary-container": "#215882",
+                  "primary-fixed-dim": "#ffb693",
+                  "primary-fixed": "#ffdbcc",
+                  "outline": "#8c7166",
+                  "surface-container": "#f3ede8",
+                  "background": "#fef8f3",
+                  "primary": "#9c3f00",
+                  "surface-tint": "#a04100",
+                  "secondary-fixed-dim": "#9acbfb",
+                  "on-primary-fixed": "#351000",
+                  "surface-container-low": "#f8f3ee",
+                  "surface-container-high": "#ede7e2",
+                  "on-primary": "#ffffff",
+                  "surface-container-highest": "#e7e1dd",
+                  "on-secondary-fixed": "#001d32",
+                  "tertiary": "#964141",
+                  "inverse-primary": "#ffb693",
+                  "primary-container": "#c45100",
+                  "surface-variant": "#e7e1dd",
+                  "on-surface-variant": "#584238",
+                  "on-tertiary": "#ffffff",
+                  "secondary-container": "#9dcefe",
+                  "tertiary-container": "#b55958",
+                  "tertiary-fixed-dim": "#ffb3b0",
+                  "surface-bright": "#fef8f3",
+                  "surface-container-lowest": "#ffffff",
+                  "on-secondary-fixed-variant": "#0b4a73",
+                  "on-tertiary-container": "#fffbff",
+                  "secondary-fixed": "#cee5ff",
+                  "tertiary-fixed": "#ffdad8",
+                  "on-tertiary-fixed": "#400107",
+                  "on-error-container": "#93000a",
+                  "on-primary-fixed-variant": "#7a3000",
+                  "outline-variant": "#e0c0b2",
+                  "inverse-on-surface": "#f6f0eb",
+                  "on-surface": "#1d1b19",
+                  "surface": "#fef8f3",
+                  "on-tertiary-fixed-variant": "#7b2c2e"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "container-padding-mobile": "20px",
+                  "chat-gap": "12px",
+                  "unit": "8px",
+                  "gutter": "24px",
+                  "container-padding-desktop": "40px"
+          },
+          "fontFamily": {
+                  "label-sm": ["Plus Jakarta Sans"],
+                  "body-md": ["Plus Jakarta Sans"],
+                  "display-lg": ["Noto Serif"],
+                  "headline-lg-mobile": ["Noto Serif"],
+                  "headline-lg": ["Noto Serif"],
+                  "assistant-voice": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+                  "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                  "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                  "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                  "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                  "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                  "assistant-voice": ["20px", {"lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "500"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-panel {
+      background: rgba(254, 248, 243, 0.7);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    .assistant-bubble {
+      background: rgba(46, 98, 140, 0.08);
+      backdrop-filter: blur(12px);
+      border-left: 3px solid #2e628c;
+    }
+    .user-bubble {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(224, 192, 178, 0.5);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm h-16 flex items-center justify-between px-container-padding-mobile">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 duration-200 text-primary">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-display-lg text-headline-lg text-primary">ANA</h1>
+</div>
+<div class="h-10 w-10 rounded-full overflow-hidden border-2 border-primary/20">
+<img alt="User profile picture" data-alt="A professional and friendly portrait of a traveler with a warm smile, set against a softly blurred Mediterranean coastal background. The lighting is golden hour, creating a warm, approachable vibe that aligns with the brand's sophisticated travel buddy persona. High-quality photography with soft focus and natural skin tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwLcSGQKNZldWg15dNOq0E0dNRCSF2t56Zw49OCjpeZZiwoznj4XLDZIED8xPGUd1UvAO8LdLpsS23w3w8p0IGI3DPJKJ22712aGDr40YMusPbmu1D4Ws0SclCE069EDbE2NB8mWNmInhMjfJSYVa0gcjiG4s7v3J4UJfgHdwreWkyIXRYbIlQfQyhZ-DxBu-nzMYmBZgcMnZCjLf5PBtwrJBCp60OkuMijJ1hpoyat9_1GSBthvnTHcX5e1nzHsnUibfDtyeUhVox"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-20 px-container-padding-mobile max-w-2xl mx-auto space-y-6">
+<!-- Chat History -->
+<div class="flex flex-col gap-chat-gap">
+<!-- User Message -->
+<div class="flex justify-end">
+<div class="user-bubble p-4 rounded-2xl rounded-tr-none max-w-[85%] shadow-sm">
+<p class="font-body-md text-on-surface-variant">Hey! I'm looking for something special today. I love Ottoman history but also want to enjoy some local boutique wines by the Bosphorus.</p>
+</div>
+</div>
+<!-- Assistant Message -->
+<div class="flex justify-start gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-[18px] text-on-secondary" data-icon="chat_spark" style="font-variation-settings: 'FILL' 1;">chat_spark</span>
+</div>
+<div class="assistant-bubble p-4 rounded-2xl rounded-tl-none max-w-[85%]">
+<p class="font-assistant-voice text-on-secondary-fixed-variant leading-relaxed">
+            Merhaba! I've curated a day in Istanbul that matches your love for history and fine wines. Ready to see the plan?
+          </p>
+<div class="mt-4 flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+<span class="bg-surface-container-highest px-3 py-1 rounded-full text-label-sm text-primary border border-outline-variant/30 shrink-0">Historical Peninsula</span>
+<span class="bg-surface-container-highest px-3 py-1 rounded-full text-label-sm text-primary border border-outline-variant/30 shrink-0">Boutique Vineyards</span>
+</div>
+</div>
+</div>
+<!-- Assistant Insight Card (Bento Style) -->
+<div class="pl-11 pr-4">
+<div class="glass-panel rounded-xl overflow-hidden shadow-sm border border-outline-variant/20">
+<div class="h-32 relative">
+<img alt="Istanbul View" class="w-full h-full object-cover" data-alt="A cinematic view of the Hagia Sophia and Blue Mosque at sunset, viewed from a high-end rooftop terrace with a glass of rich red wine in the foreground. The lighting is atmospheric and warm, capturing the essence of luxury tourism in Istanbul. The style is elegant and inviting, using deep oranges and soft blues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn18JKbwOTljw1eyD7d5EI_6oomzroP0nzLy7OqJ2m4QbUtk0zxswjhjMkvwEbZd7bKVVoQrYRLfGHJ4LksUZyFgWzCGv9yXhQo2N9ZO9uWRTetdArGlYJT5zS5l2vwjxXqMRj1MUU-qnEWryf54JftuVV4WN0rp0AW4xcDWVPrO47abp3FXFCjwK9RpoDWZbm-g2vjEi8BnAki3ymwjHXR8cL9deLPMwPXhN8OFy8UIR3bkliFY3svXtWukJvv9chzr42nxdglH1v"/>
+<div class="absolute top-2 left-2 bg-white/80 backdrop-blur-md px-2 py-0.5 rounded text-[10px] font-bold text-primary uppercase tracking-wider">Local Secret</div>
+</div>
+<div class="p-4 bg-surface/50">
+<h3 class="font-headline-lg-mobile text-on-surface mb-1">Galata Wine Cellar</h3>
+<p class="font-body-md text-on-surface-variant text-sm mb-3">Tucked away in a 14th-century vault, featuring Thracian varietals.</p>
+<button class="w-full bg-primary text-on-primary py-2 rounded-lg font-label-sm active:scale-95 transition-transform">Add to Itinerary</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Suggestion -->
+<div class="flex justify-center pt-4">
+<button class="group relative flex items-center gap-3 glass-panel px-6 py-4 rounded-2xl shadow-xl border border-primary/20 active:scale-95 transition-all">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="directions_run">directions_run</span>
+</div>
+<div class="text-left">
+<p class="font-label-sm text-on-surface-variant opacity-70">Suggested for you</p>
+<p class="font-body-md font-bold text-secondary">Show me today's run club location.</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</main>
+<!-- Chat Input Fixed Bottom -->
+<div class="fixed bottom-24 left-0 w-full px-container-padding-mobile z-40">
+<div class="max-w-2xl mx-auto">
+<div class="glass-panel rounded-full p-2 flex items-center gap-2 shadow-2xl border border-white/50">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+<input class="flex-1 bg-transparent border-none focus:ring-0 font-body-md text-on-surface placeholder:text-on-surface-variant/50" placeholder="Ask ANA..." type="text"/>
+<button class="w-10 h-10 rounded-full bg-[#ff7a3d] flex items-center justify-center text-white shadow-lg active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="send" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-surface/80 backdrop-blur-2xl rounded-t-xl shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+<!-- Explore -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:text-primary transition-all active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="explore">explore</span>
+<span class="font-label-sm text-label-sm">Explore</span>
+</a>
+<!-- Assistant (ACTIVE) -->
+<a class="flex flex-col items-center justify-center text-primary font-bold active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="chat_spark" style="font-variation-settings: 'FILL' 1;">chat_spark</span>
+<span class="font-label-sm text-label-sm">ANA</span>
+</a>
+<!-- Itinerary -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:text-primary transition-all active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="map">map</span>
+<span class="font-label-sm text-label-sm">Itinerary</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:text-primary transition-all active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Noto+Serif:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#2e628c",
+                    "on-background": "#1d1b19",
+                    "inverse-surface": "#32302d",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#215882",
+                    "primary-fixed-dim": "#ffb693",
+                    "primary-fixed": "#ffdbcc",
+                    "outline": "#8c7166",
+                    "surface-container": "#f3ede8",
+                    "background": "#fef8f3",
+                    "primary": "#9c3f00",
+                    "surface-tint": "#a04100",
+                    "secondary-fixed-dim": "#9acbfb",
+                    "on-primary-fixed": "#351000",
+                    "surface-container-low": "#f8f3ee",
+                    "surface-container-high": "#ede7e2",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#ded9d4",
+                    "on-surface": "#1d1b19",
+                    "surface": "#fef8f3",
+                    "on-tertiary-fixed-variant": "#7b2c2e",
+                    "outline-variant": "#e0c0b2",
+                    "on-primary-container": "#fffbff",
+                    "inverse-on-surface": "#f6f0eb",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#e7e1dd",
+                    "on-secondary-fixed": "#001d32",
+                    "tertiary": "#964141",
+                    "inverse-primary": "#ffb693",
+                    "primary-container": "#c45100",
+                    "surface-variant": "#e7e1dd",
+                    "on-surface-variant": "#584238",
+                    "on-tertiary": "#ffffff",
+                    "secondary-container": "#9dcefe",
+                    "tertiary-container": "#b55958",
+                    "tertiary-fixed-dim": "#ffb3b0",
+                    "surface-bright": "#fef8f3",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#0b4a73",
+                    "on-tertiary-container": "#fffbff",
+                    "secondary-fixed": "#cee5ff",
+                    "tertiary-fixed": "#ffdad8",
+                    "on-tertiary-fixed": "#400107",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed-variant": "#7a3000"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-padding-mobile": "20px",
+                    "chat-gap": "12px",
+                    "unit": "8px",
+                    "gutter": "24px",
+                    "container-padding-desktop": "40px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "display-lg": ["Noto Serif"],
+                    "headline-lg-mobile": ["Noto Serif"],
+                    "headline-lg": ["Noto Serif"],
+                    "assistant-voice": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "assistant-voice": ["20px", {"lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(254, 248, 243, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-pill {
+            box-shadow: 0 4px 12px rgba(156, 63, 0, 0.15);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<header class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm">
+<div class="flex items-center justify-between px-container-padding-mobile h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-surface-container-high/50 transition-colors active:scale-95 duration-200 rounded-full">
+<span class="material-symbols-outlined text-primary" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-display-lg text-headline-lg text-primary">TravelAnatolia</h1>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant/30">
+<img alt="User profile picture" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqbyipA2Jbh2_crNy1et2HqOcbL2NaOKc9jdHCevUaP5w_1ZKHNCza3qyyqpW9ep99CfNcS2xEMIk-pnW2ejmGg6Yx_2qGsdI0Rhl6ZzZlpaJ-V4S1vb9EZmXwNnJiOHX3yjdytrbrZX9xi6lhlPkRiFdx_PWbQThJLhcf6S803FMpxwUNhD4EFYsNEhkAjiTl0o6DUq0oo5yQcytbIuZn8_XmF_2rd2C9gJnHZ-44TY7lLknOjLdMBydzBtaTZt4_GGZiOqzOy-Sg"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-container-padding-mobile max-w-7xl mx-auto">
+<section class="mb-8">
+<h2 class="font-headline-lg text-headline-lg-mobile text-on-surface mb-6">Discover Beyond</h2>
+<div class="flex gap-3 overflow-x-auto pb-4 no-scrollbar">
+<button class="flex-none px-6 py-3 rounded-full bg-primary text-on-primary font-label-sm text-label-sm active-pill active:scale-95 transition-all">Fine Dining</button>
+<button class="flex-none px-6 py-3 rounded-full glass-panel text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-high/50 active:scale-95 transition-all">Run Clubs</button>
+<button class="flex-none px-6 py-3 rounded-full glass-panel text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-high/50 active:scale-95 transition-all">Boutique Hotels</button>
+<button class="flex-none px-6 py-3 rounded-full glass-panel text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-high/50 active:scale-95 transition-all">Local Workshops</button>
+</div>
+</section>
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<div class="group relative overflow-hidden rounded-3xl bg-surface-container shadow-sm border border-outline-variant/20">
+<div class="aspect-[4/5] relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A warm, sun-drenched pottery studio in Cappadocia, Turkey. An artisan's hands are covered in rich terracotta clay as they shape a traditional Anatolian vessel on a spinning wheel. The room is filled with soft, golden Mediterranean light filtering through a high window, highlighting dust motes in the air. The aesthetic is organic and luxurious, focusing on authentic craftsmanship and earth tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVc0tEbNVUYF1-5D9Il44lCzTLGA50Un_UxQwQsI3NjV3s5SmificT2N55yerbjXeDk1K768bomPq7VYObgUPLUNGg4Dc7wF0MGyGlnLG9BooYSBjgdxb2pwQQsx4cugFgSyTuO5pD628cTVjT9Epa99v3QD0J4jSFyQIsDQErEE8fkYXHyzO_ZTGPVKyZCNDZ6lE63oQXtiR_u2oU3Va2hnkrxhwquIavNmxrrZJrHkIuQqO9p2Y1fkwp7Z4QT4jX5kKq9bZ5EIF0"/>
+<div class="absolute top-4 left-4 glass-panel px-3 py-1.5 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-sm text-label-sm text-on-surface">98% Match</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-lg text-headline-lg-mobile text-on-surface">Anatolian Pottery Course</h3>
+<span class="material-symbols-outlined text-outline" data-icon="favorite">favorite</span>
+</div>
+<p class="text-on-surface-variant font-body-md mb-4 opacity-80">Master the ancient wheel techniques of Avanos with a master potter.</p>
+<div class="flex items-center gap-4 text-secondary font-label-sm text-label-sm">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="schedule">schedule</span>
+                            3 Hours
+                        </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span>
+                            Cappadocia
+                        </div>
+</div>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-3xl bg-surface-container shadow-sm border border-outline-variant/20">
+<div class="aspect-[4/5] relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A cinematic night scene in Antalya, Turkey, featuring runners illuminated by soft blue and white streetlights against the backdrop of the ancient Hadrian's Gate. The atmosphere is energetic and cool, with a palette of deep navy and vibrant Mediterranean blues. Long exposure captures the dynamic motion of the runners, creating a sense of community and nocturnal urban exploration." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1F3vG6p1UPucEP5VyZF2nDTRwhHuz9x3a6oo8ixULpBkcogdydYDY4JUpyQrElAJccFkkjPc36MBmvdOPNnKyRNJvIrcTrL2U-G1ixgW2JfWY-zor2gsLHiOIfa7cLUsD6ygtoW11DPz7DcqlTjgOymhjNHh9VI1N-BY5mugipACeyBKvXtzLMuExTDqCqsHP0oCBSQqtAiTMEHx5zSvOPb0-alErTsb8pOaL-tbhB8gNRiCZoOKzMxEGmhQoE3BLuE3iO9jl_1Mc"/>
+<div class="absolute top-4 left-4 glass-panel px-3 py-1.5 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-sm text-label-sm text-on-surface">92% Match</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-lg text-headline-lg-mobile text-on-surface">Antalya Night Run</h3>
+<span class="material-symbols-outlined text-outline" data-icon="favorite">favorite</span>
+</div>
+<p class="text-on-surface-variant font-body-md mb-4 opacity-80">A high-energy social run through the illuminated gates of the Old Town.</p>
+<div class="flex items-center gap-4 text-secondary font-label-sm text-label-sm">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="bolt">bolt</span>
+                            Level 2
+                        </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="group">group</span>
+                            15+ Joined
+                        </div>
+</div>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-3xl bg-surface-container shadow-sm border border-outline-variant/20">
+<div class="aspect-[4/5] relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A sophisticated fine dining table setting in an upscale Istanbul restaurant overlooking the Bosphorus. Crystal glassware and polished silver cutlery catch the twilight reflection of the water. The mood is intimate and ultra-premium, featuring a palette of rich woods, cream linens, and the deep sapphire of the sea at dusk. The lighting is low and warm, creating an atmosphere of curated luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtkkasw53T-_MarwHAP_3e5KXJlYWfWdNRyivF-F6coHx22U--eOxepgsrFQfQvcPUNSOQfS-LpktX89k0UeIcAS79Pc-kgHGq-CRs6edVNNiXo3iX1hlGrIkT4q6iutMMFPZWz2PDVi9Fbn_XHTpYkEUnaycU3Uy3AZf9pXsZx5KTgILpFd1dok8ZmccZW-La9H6vfSRSAfKkG2qfiNYxacvjSMjW0gMopjB6dGfXT6XJFIlDEYVY1oE2ICFRIbhyIhehLZKJkqe1"/>
+<div class="absolute top-4 left-4 glass-panel px-3 py-1.5 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-sm text-label-sm text-on-surface">85% Match</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-lg text-headline-lg-mobile text-on-surface">Mikla Terrace Tasting</h3>
+<span class="material-symbols-outlined text-outline" data-icon="favorite">favorite</span>
+</div>
+<p class="text-on-surface-variant font-body-md mb-4 opacity-80">New Anatolian Kitchen with breathtaking 360° Bosphorus views.</p>
+<div class="flex items-center gap-4 text-secondary font-label-sm text-label-sm">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+                            Michelin
+                        </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="restaurant">restaurant</span>
+                            Tasting Menu
+                        </div>
+</div>
+</div>
+</div>
+</section>
+<div class="mt-12 p-8 rounded-3xl glass-panel border border-outline-variant/30 flex flex-col md:flex-row items-center gap-8">
+<div class="flex-1">
+<h4 class="font-headline-lg text-headline-lg-mobile text-primary mb-2">Want something more personal?</h4>
+<p class="text-on-surface-variant font-body-md">Tell our Travel Assistant your mood, and we'll curate a secret list just for you.</p>
+</div>
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-label-sm text-label-sm shadow-lg hover:shadow-xl active:scale-95 duration-200 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="chat_spark">chat_spark</span>
+                Ask Assistant
+            </button>
+</div>
+</main>
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-2xl shadow-[0_-4px_20px_rgba(0,0,0,0.05)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-bold hover:text-primary dark:hover:text-primary-fixed transition-all active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="explore" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-sm text-label-sm">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:text-primary dark:hover:text-primary-fixed transition-all active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="chat_spark">chat_spark</span>
+<span class="font-label-sm text-label-sm">Assistant</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:text-primary dark:hover:text-primary-fixed transition-all active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="map">map</span>
+<span class="font-label-sm text-label-sm">Itinerary</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:text-primary dark:hover:text-primary-fixed transition-all active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+</body></html>

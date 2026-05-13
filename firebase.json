@@ -1,0 +1,48 @@
+{
+    "firestore": {
+        "indexes": "firestore.indexes.json"
+    },
+    "functions": {
+        "source": "firebase/functions",
+        "runtime": "nodejs22"
+    },
+    "flutter": {
+        "platforms": {
+            "android": {
+                "default": {
+                    "projectId": "travelanatolia-prod",
+                    "appId": "1:49127929809:android:408105eb8125f6c57c12f0",
+                    "fileOutput": "android/app/google-services.json"
+                }
+            },
+            "dart": {
+                "lib/firebase_options.dart": {
+                    "projectId": "travelanatolia-prod",
+                    "configurations": {
+                        "android": "1:49127929809:android:408105eb8125f6c57c12f0",
+                        "ios": "1:49127929809:ios:7d60487240e1d2f77c12f0"
+                    }
+                }
+            }
+        }
+    },
+    "emulators": {
+        "auth": {
+            "host": "0.0.0.0",
+            "port": 9099
+        },
+        "functions": {
+            "host": "0.0.0.0",
+            "port": 5001
+        },
+        "firestore": {
+            "host": "0.0.0.0",
+            "port": 8080
+        },
+        "ui": {
+            "host": "0.0.0.0",
+            "enabled": true
+        },
+        "singleProjectMode": true
+    }
+}
