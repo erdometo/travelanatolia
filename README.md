@@ -1,120 +1,129 @@
-# 🧭 TravelAnatolia V2 (Agentic Travel Architect)
+<p align="center">
+  <img src="assets/logo/cover.png" alt="TravelAnatolia Cover Logo" width="600" style="border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);" />
+</p>
 
-> **Status:** Currently refactoring legacy V1 into a modern multi-agent architecture with strict JSON schema outputs and Genkit routing.
-
-TravelAnatolia V2 is an evolution of the original travel companion, now architected as a sophisticated multi-agent system. It leverages agentic workflows to provide precise, personalized, and context-aware travel planning for exploring Anatolia.
-
----
-
-## ✨ Features
-
-| Feature | Description |
-|---|---|
-| 🤖 **Agentic Assistant** | Multi-agent architecture using LangGraph for complex reasoning and Genkit for routing |
-| 🗺️ **Explore Screen** | Bento-grid discovery of destinations, activities, food, and culture — filterable by category |
-| 📋 **Itinerary Architect** | Strict JSON schema outputs ensuring perfectly formatted, actionable travel plans |
-| 👤 **Identity Profiling** | Deep user preference analysis to power agentic personalization |
-| 🔐 **Authentication** | Firebase Auth with redirect-based navigation guard |
-| 🎨 **Stitch Design System** | Custom dark-mode theme with Google Fonts, consistent tokens, and micro-animations |
+<p align="center">
+  <img src="https://img.shields.io/badge/Flutter-3.11+-02569B?style=for-the-badge&logo=flutter&logoColor=white" />
+  <img src="https://img.shields.io/badge/Riverpod-3.0_Beta-38803F?style=for-the-badge&logo=dart&logoColor=white" />
+  <img src="https://img.shields.io/badge/Firebase_Auth-Emulator-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" />
+  <img src="https://img.shields.io/badge/Stitch-Design_System-FC5404?style=for-the-badge&logo=custom&logoColor=white" />
+</p>
 
 ---
 
-## 🏗️ Tech Stack
+# 🧭 TravelAnatolia (Mobile Client)
 
-### AI & Backend
-| Technology | Purpose |
-|---|---|
-| **TypeScript** | Core logic and type-safe agent development |
-| **Firebase Genkit** | AI orchestration and model routing |
-| **LangGraph** | Multi-agent workflow orchestration and state management |
-| **PostgreSQL** | Relational data storage for complex travel entities |
-| **Zod** | Strict JSON schema validation for all agent outputs |
+> **Welcome to the "Silk Road" Edition of TravelAnatolia.** A high-performance, cinematic, and autonomous AI-driven travel client built with Flutter. It utilizes a custom-engineered **Stitch Design System** featuring immersive dark modes, glassmorphism panel styling, and fluid micro-animations, all powered by the robust `Agentic-Core` multi-agent backend.
 
-### Flutter App (Frontend)
-| Package | Purpose |
-|---|---|
-| `flutter_riverpod ^3.3.1` | State management (providers, async state) |
-| `go_router ^17.2.3` | Declarative navigation with auth guards |
-| `firebase_core / auth / firestore` | Firebase platform integration |
-| `google_fonts ^8.1.0` | Typography (Stitch design system) |
+Explore the historical cities, balloon-filled skies of Cappadocia, and rich cultural heritage of Anatolia through a highly personalized, AI-orchestrated mobile interface.
 
 ---
 
-## 📁 Project Structure
+## ✨ Features & Visual Splendor
+
+| Interface Feature | Description | Styling Architecture |
+| :--- | :--- | :--- |
+| 🤖 **ANA AI Concierge** | An interactive conversational companion utilizing multi-turn tool calling on `Agentic-Core`. | Immersive, fluid chat cells, dynamic status updates, and interactive maps. |
+| 🗺️ **Explore Bento Grid** | A custom staggered discovery dashboard highlighting destinations, food, culture, and adventure. | Responsive grid cards with custom shadows and glassmorphic navigation accents. |
+| 📋 **Itinerary Architect** | Visual timeline parsing strict Zod JSON schemas directly from the AI server. | Chronological timeline cards with custom icon badges matching each activity. |
+| 👤 **Identity Profiling** | A cinematic 4-question interactive onboarding quiz matching traveler personas. | Slide-in widgets, gradient cards, and tactile feedback configurations. |
+| 🔐 **Authentication** | High-fidelity auth interface featuring Google Sign-In and local Firebase emulation. | Modern glassmorphic login panel with real-time reactive routing guards. |
+
+---
+
+## 🎨 Stitch Design System
+
+The TravelAnatolia mobile application is built upon **Stitch**, a bespoke design system meticulously engineered for luxury travel applications.
+
+*   **Harmony of Colors:** Immersive obsidian-dark backgrounds (`#0B0C10`) paired with vibrant sunset orange accents (`#FC5404`), gold secondary highlights, and sleek neon border lines.
+*   **Modern Typography:** Elegant and readable fonts sourced from Google Fonts, emphasizing modern title settings using **Outfit** and classical subheaders using **Cinzel**.
+*   **Immersive Glassmorphism:** Custom `GlassPanel` containers combining background blur filters with semi-transparent overlays (`Colors.white.withOpacity(0.05)`) and micro-thin borders.
+*   **Micro-Animations:** Seamless transitions powered by `animate_do` and custom implicit animations, creating an interface that feels responsive, premium, and alive.
+
+---
+
+## 📱 App Preview
+
+Below is a preview of the high-fidelity user interface designed to provide an unparalleled user experience:
+
+<p align="center">
+  <img src="assets/screenshots/flutter_01.png" alt="TravelAnatolia Interface Preview" width="380" style="border-radius: 24px; border: 4px solid #1f2833; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" />
+</p>
+
+---
+
+## 🏗️ Technical Architecture
+
+The mobile client adheres to clean architectural separation of concerns, divided into three robust layers:
 
 ```
-APP/
-├── lib/
-│   ├── main.dart                   # App entry point, Firebase init, emulator config
-│   ├── router.dart                 # GoRouter with auth-based redirect guards
-│   ├── firebase_options.dart       # Auto-generated Firebase configuration
-│   ├── ui/
-│   │   ├── theme.dart              # TravelAnatolia MaterialTheme (Stitch design system)
-│   │   ├── scaffold_with_nav_bar.dart  # Persistent bottom nav shell
-│   │   ├── stitch_components/      # Reusable branded UI components
-│   │   └── widgets/                # General shared widgets
-│   └── features/
-│       ├── auth/                   # Login screen + auth state provider
-│       ├── onboarding/             # Multi-step identity quiz screen
-│       ├── assistant/              # ANA chat screen + message provider
-│       ├── explore/                # Destination grid + category filtering
-│       ├── itinerary/              # Itinerary list & detail screen
-│       └── profile/                # User profile screen
-├── firebase/
-│   └── functions/
-│       └── src/
-│           ├── index.ts            # Cloud Function exports
-│           ├── test_data.ts        # Seed data for emulator testing
-│           └── genkit/
-│               ├── config.ts       # Genkit + Gemini plugin setup
-│               ├── flows/          # assistantFlow — the core AI conversation flow
-│               └── tools/          # Genkit tools (callable by the AI)
-├── firebase.json                   # Emulator ports & project config
-├── firestore.indexes.json          # Firestore composite indexes
-└── pubspec.yaml
+┌─────────────────────────────────────────────────────────┐
+│                        UI LAYER                         │
+│  - Presentation Widgets (ChatScreen, OnboardingScreen)  │
+│  - Stitch Design System Tokens (ThemeData, GlassPanel)  │
+└────────────────────────────┬────────────────────────────┘
+                             │
+                             ▼
+┌─────────────────────────────────────────────────────────┐
+│                       LOGIC LAYER                       │
+│  - Riverpod State & StateNotifier Providers             │
+│  - Declarative Router Guards (GoRouter + AuthBridge)    │
+└────────────────────────────┬────────────────────────────┘
+                             │
+                             ▼
+┌─────────────────────────────────────────────────────────┐
+│                       DATA LAYER                        │
+│  - REST Client Services (http)                          │
+│  - Local Firebase SDKs (Auth & Firestore Emulators)     │
+└─────────────────────────────────────────────────────────┘
 ```
 
 ---
 
 ## 🚀 Getting Started
 
+Follow these step-by-step instructions to get the mobile client compiling and running locally.
+
 ### Prerequisites
 
-- [Flutter SDK](https://docs.flutter.dev/get-started/install) ≥ 3.11.5
-- [Firebase CLI](https://firebase.google.com/docs/cli) installed and logged in
-- [Node.js](https://nodejs.org/) v22 (for Firebase Functions)
-- A Firebase project linked at `travelanatolia-prod`
+*   [Flutter SDK](https://docs.flutter.dev/get-started/install) v3.11.0 or higher
+*   [Firebase CLI](https://firebase.google.com/docs/cli) installed and authenticated
+*   A running instance of [Agentic-Core Backend](../Agentic-Core/README.md) (on Port `4000`)
 
-### 1. Install Flutter Dependencies
+### 1. Install Dependencies
+
+From the `APP` folder directory, pull all the required Flutter and Dart packages:
 
 ```bash
 flutter pub get
 ```
 
-### 2. Install Cloud Functions Dependencies
+### 2. Configure Firebase Emulator Settings
 
-```bash
-cd firebase/functions
-npm install
+To enable testing on physical devices or local emulators, the app directs authentication and Firestore traffic locally. Verify the IP addresses inside [lib/main.dart](file:///c:/Users/ASUS/Desktop/travelanatolia/APP/lib/main.dart):
+
+```dart
+// lib/main.dart
+const String localEmulatorHost = '192.168.1.6'; // Replace with your LAN IP or 'localhost'
+
+FirebaseFirestore.instance.useFirestoreEmulator(localEmulatorHost, 8080);
+await FirebaseAuth.instance.useAuthEmulator(localEmulatorHost, 9099);
 ```
 
-### 3. Start Firebase Emulators
+> [!IMPORTANT]
+> Ensure your Flutter device/emulator and your development machine are connected to the same local network (Wi-Fi) if you are testing on a physical iOS or Android device.
 
-From the project root (`APP/`):
+### 3. Spin up the Firebase Local Emulators
+
+Start the local Firestore and Authentication servers to mock backend user states offline:
 
 ```bash
 firebase emulators:start
 ```
 
-This starts:
-- **Auth Emulator** → `localhost:9099`
-- **Firestore Emulator** → `localhost:8080`
-- **Functions Emulator** → `localhost:5001`
-- **Emulator UI** → `localhost:4000`
+### 4. Run the Application
 
-> **Note:** The app connects to emulators via the IP `192.168.1.6` in debug mode. Update `main.dart` if your local machine IP differs.
-
-### 4. Run the Flutter App
+Execute the standard Flutter run command to build and launch the application:
 
 ```bash
 flutter run
@@ -122,74 +131,40 @@ flutter run
 
 ---
 
-## 🤖 AI Assistant (ANA)
+## ⚙️ Development & Maintenance
 
-ANA is powered by **Google Gemini** through the [Firebase Genkit](https://firebase.google.com/docs/genkit) framework.
+### Static Code Analysis
 
-- The Flutter app calls the `chatWithAssistant` Firebase Callable Function via `cloud_functions`.
-- Genkit orchestrates the `assistantFlow`, which constructs a prompt enriched with the user's travel identity profile from Firestore.
-- Responses are streamed back to the chat UI.
-
-### Cloud Functions
-
-| Function | Trigger | Description |
-|---|---|---|
-| `chatWithAssistant` | HTTPS Callable | Invokes the Genkit `assistantFlow` for AI chat |
-| `onUserOnboardingUpdate` | Firestore Write | Aggregates onboarding quiz answers into the user's identity profile |
-
----
-
-## 🔐 Authentication & Navigation
-
-Navigation is handled by `GoRouter` with an auth guard:
-
-- **Unauthenticated users** → redirected to `/login`
-- **Authenticated users** → land on `/` (ANA Chat)
-- **New users** → routed through `/onboarding` to complete their identity quiz
-
-The router reacts to `authProvider` changes via a `ChangeNotifier` bridge, ensuring seamless real-time redirects on login/logout.
-
----
-
-## 🧑‍💻 Development Notes
-
-### Emulator IP
-The emulator host is hardcoded to `192.168.1.6` in `main.dart`. Change this to `localhost` or your machine's LAN IP as needed:
-
-```dart
-// lib/main.dart
-FirebaseFirestore.instance.useFirestoreEmulator('YOUR_IP', 8080);
-await FirebaseAuth.instance.useAuthEmulator('YOUR_IP', 9099);
-FirebaseFunctions.instanceFor(region: 'europe-west3').useFunctionsEmulator('YOUR_IP', 5001);
-```
-
-### Build Functions (TypeScript)
-
-```bash
-cd firebase/functions
-npm run build          # compile once
-npm run build:watch    # watch mode for development
-```
-
-### Lint & Analysis
+Ensure there are no compile warnings or layout issues before proposing commits. Run:
 
 ```bash
 flutter analyze
 ```
 
+### Decoupled Firebase Architecture
+
+> [!NOTE]
+> All legacy Cloud Functions previously located in `firebase/functions/` have been fully deprecated and removed. All intelligent multi-agent tasks, Zod parsers, and Neo4j graph operations are now cleanly offloaded to the [Agentic-Core Backend](../Agentic-Core/README.md) server running on port `4000`.
+
 ---
 
-## 📱 Supported Platforms
+## 🗺️ Mobile Client Roadmap
 
-| Platform | Status |
-|---|---|
-| Android | ✅ Supported |
-| iOS | ✅ Supported |
-| Web | 🚧 Not configured |
-| Desktop | 🚧 Not configured |
+- [x] Integrate high-fidelity Stitch dark-mode theme across all tabs.
+- [x] Implement declarative auth redirects using `GoRouter` & `ChangeNotifier` bridges.
+- [x] Migrate onboarding quiz to communicate with the `analyzeProfileFlow` endpoint.
+- [x] Rework the ANA AI assistant provider to utilize synchronous REST calls to `travelAssistantFlow`.
+- [x] Fix and resolve all deprecated icons and static code warnings.
+- [ ] Add offline support for browsing cached travel itineraries.
+- [ ] Implement local push notification cues for booking confirmations.
+- [ ] Incorporate interactive Google Map views for travel points of interest.
 
 ---
 
 ## 📄 License
 
-Private project — no rights given to use it anywhere else without written permission from Erdem Metin.
+This software is a private proprietary project. All rights are strictly reserved. No part of this repository may be reproduced, distributed, or transmitted in any form without the prior written permission of **Erdem Metin**.
+
+<p align="center" style="margin-top: 40px;">
+  Made with 🧡 & ✨ for the TravelAnatolia Experience
+</p>

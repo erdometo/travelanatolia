@@ -2,79 +2,108 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppColors {
-  static const primary = Color(0xFF9c3f00);
-  static const onPrimary = Color(0xFFffffff);
-  static const primaryContainer = Color(0xFFc45100);
-  static const onPrimaryContainer = Color(0xFFffffff);
+  // Brand Colors
+  static const Color primary = Color(0xFFC88D67); // Ochre/Sandstone
+  static const Color secondary = Color(0xFF2D3E4E); // Deep Navy
+  static const Color tertiary = Color(0xFF8B4513); // Saddle Brown
   
-  static const secondary = Color(0xFF2e628c);
-  static const onSecondary = Color(0xFFffffff);
-  static const secondaryContainer = Color(0xFF9dcefe);
-  static const onSecondaryContainer = Color(0xFF215882);
+  // Neutral Colors
+  static const Color background = Color(0xFFFBF8F6); // Soft Cream
+  static const Color surface = Color(0xFFFFFFFF);
+  static const Color surfaceVariant = Color(0xFFF3EDE8);
+  static const Color onSurface = Color(0xFF1A1C1E);
+  static const Color onSurfaceVariant = Color(0xFF44474E);
   
-  static const tertiary = Color(0xFF964141);
-  static const onTertiary = Color(0xFFffffff);
-  static const tertiaryContainer = Color(0xFFb55958);
-  static const onTertiaryContainer = Color(0xFFfffbff);
-  
-  static const background = Color(0xFFfef8f3);
-  static const onBackground = Color(0xFF1d1b19);
-  
-  static const surface = Color(0xFFfef8f3);
-  static const onSurface = Color(0xFF1d1b19);
-  static const surfaceVariant = Color(0xFFe7e1dd);
-  static const onSurfaceVariant = Color(0xFF584238);
-  
-  static const outline = Color(0xFF8c7166);
-  static const outlineVariant = Color(0xFFe0c0b2);
-  
-  static const error = Color(0xFFba1a1a);
-  static const onError = Color(0xFFffffff);
-  static const errorContainer = Color(0xFFffdad6);
-  static const onErrorContainer = Color(0xFF93000a);
+  // Semantic Colors
+  static const Color error = Color(0xFFBA1A1A);
+  static const Color outline = Color(0xFF74777F);
+  static const Color outlineVariant = Color(0xFFC4C6CF);
 }
 
 final ThemeData travelAnatoliaTheme = ThemeData(
-  colorScheme: const ColorScheme(
-    brightness: Brightness.light,
+  useMaterial3: true,
+  colorScheme: ColorScheme.fromSeed(
+    seedColor: AppColors.primary,
     primary: AppColors.primary,
-    onPrimary: AppColors.onPrimary,
-    primaryContainer: AppColors.primaryContainer,
-    onPrimaryContainer: AppColors.onPrimaryContainer,
+    onPrimary: Colors.white,
     secondary: AppColors.secondary,
-    onSecondary: AppColors.onSecondary,
-    secondaryContainer: AppColors.secondaryContainer,
-    onSecondaryContainer: AppColors.onSecondaryContainer,
+    onSecondary: Colors.white,
     tertiary: AppColors.tertiary,
-    onTertiary: AppColors.onTertiary,
-    tertiaryContainer: AppColors.tertiaryContainer,
-    onTertiaryContainer: AppColors.onTertiaryContainer,
-    background: AppColors.background,
-    onBackground: AppColors.onBackground,
-    surface: AppColors.surface,
+    onTertiary: Colors.white,
+    surface: AppColors.background,
     onSurface: AppColors.onSurface,
-    surfaceVariant: AppColors.surfaceVariant,
+    surfaceContainerHighest: AppColors.surfaceVariant,
     onSurfaceVariant: AppColors.onSurfaceVariant,
     outline: AppColors.outline,
     outlineVariant: AppColors.outlineVariant,
     error: AppColors.error,
-    onError: AppColors.onError,
-    errorContainer: AppColors.errorContainer,
-    onErrorContainer: AppColors.onErrorContainer,
   ),
-  useMaterial3: true,
-  textTheme: GoogleFonts.plusJakartaSansTextTheme(),
-  scaffoldBackgroundColor: AppColors.background,
-  appBarTheme: AppBarTheme(
-    backgroundColor: Colors.transparent,
-    elevation: 0,
-    centerTitle: false,
-    iconTheme: const IconThemeData(color: AppColors.primary),
-    titleTextStyle: GoogleFonts.notoSerif(
+  textTheme: TextTheme(
+    displayLarge: GoogleFonts.outfit(
+      fontSize: 57,
+      fontWeight: FontWeight.w400,
+      letterSpacing: -0.25,
+      color: AppColors.onSurface,
+    ),
+    displayMedium: GoogleFonts.outfit(
+      fontSize: 45,
+      fontWeight: FontWeight.w400,
+      color: AppColors.onSurface,
+    ),
+    displaySmall: GoogleFonts.outfit(
+      fontSize: 36,
+      fontWeight: FontWeight.w400,
+      color: AppColors.onSurface,
+    ),
+    headlineLarge: GoogleFonts.notoSerif(
       fontSize: 32,
+      fontWeight: FontWeight.w700,
+      color: AppColors.onSurface,
+    ),
+    headlineMedium: GoogleFonts.notoSerif(
+      fontSize: 28,
       fontWeight: FontWeight.w600,
+      color: AppColors.onSurface,
+    ),
+    titleLarge: GoogleFonts.notoSerif(
+      fontSize: 22,
+      fontWeight: FontWeight.w600,
+      color: AppColors.onSurface,
+    ),
+    titleMedium: GoogleFonts.outfit(
+      fontSize: 16,
+      fontWeight: FontWeight.w500,
+      letterSpacing: 0.15,
+      color: AppColors.onSurface,
+    ),
+    bodyLarge: GoogleFonts.outfit(
+      fontSize: 16,
+      fontWeight: FontWeight.w400,
+      letterSpacing: 0.5,
+      color: AppColors.onSurface,
+    ),
+    bodyMedium: GoogleFonts.outfit(
+      fontSize: 14,
+      fontWeight: FontWeight.w400,
+      letterSpacing: 0.25,
+      color: AppColors.onSurfaceVariant,
+    ),
+    labelLarge: GoogleFonts.outfit(
+      fontSize: 14,
+      fontWeight: FontWeight.w500,
+      letterSpacing: 0.1,
       color: AppColors.primary,
     ),
   ),
+  cardTheme: CardThemeData(
+    color: AppColors.surface,
+    elevation: 0,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(24),
+      side: BorderSide(color: AppColors.outlineVariant.withValues(alpha: 0.5)),
+    ),
+  ),
+  iconTheme: const IconThemeData(
+    color: AppColors.secondary,
+  ),
 );
-

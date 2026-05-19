@@ -11,8 +11,6 @@ import 'package:travelanatolia/ui/scaffold_with_nav_bar.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
-  final authState = ref.watch(authProvider);
-
   return GoRouter(
     initialLocation: '/',
     // Use the authState to trigger re-evaluations

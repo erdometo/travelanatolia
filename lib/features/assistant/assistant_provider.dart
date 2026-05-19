@@ -21,72 +21,56 @@ class AssistantNotifier extends Notifier<List<ChatMessage>> {
     // Add user message to state
     state = [...state, ChatMessage(role: 'user', content: message)];
     
-    // Add an empty assistant message to be populated by stream
-    state = [...state, ChatMessage(role: 'model', content: '')];
+    // Add an empty assistant message to be populated
+    state = [...state, ChatMessage(role: 'model', content: 'Thinking...')];
     final assistantMessageIndex = state.length - 1;
 
     try {
       final idToken = await user.getIdToken();
       
-      // Use local emulator URL in debug mode, production URL otherwise
+      // Use local Agentic-Core port 4000 in debug mode
       final baseUrl = kDebugMode 
-        ? 'http://192.168.1.6:5001/travelanatolia-prod/europe-west3' 
-        : 'https://europe-west3-travelanatolia-prod.cloudfunctions.net';
+        ? 'http://192.168.1.6:4000' 
+        : 'https://europe-west3-travelanatolia-prod.cloudfunctions.net'; // Fallback / production URL
       
-      final url = Uri.parse('$baseUrl/chatWithAssistant');
+      final url = Uri.parse('$baseUrl/travelAssistantFlow');
       
-      final request = http.Request('POST', url);
-      request.headers.addAll({
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer $idToken',
-      });
-      request.body = jsonEncode({
-        'data': {
-          'userId': user.uid,
-          'message': message,
-          'history': state.sublist(0, state.length - 2).map((m) => {
-            'role': m.role,
-            'content': m.content,
-          }).toList(),
+      final response = await http.post(
+        url,
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer $idToken',
         },
-      });
-
-      final client = http.Client();
-      final response = await client.send(request);
+        body: jsonEncode({
+          'data': {
+            'userId': user.uid,
+            'sessionId': 'session_${user.uid}', // Simple session matching user for simplicity
+            'message': message,
+          },
+        }),
+      );
 
       if (response.statusCode != 200) {
         state = [
           ...state.sublist(0, assistantMessageIndex),
-          ChatMessage(role: 'model', content: 'Error: ${response.statusCode}'),
+          ChatMessage(role: 'model', content: 'Error: ${response.statusCode}\n${response.body}'),
         ];
         return;
       }
 
-      String accumulatedContent = '';
-      
-      await for (var chunk in response.stream.transform(utf8.decoder).transform(const LineSplitter())) {
-        if (chunk.trim().isEmpty) continue;
-        
-        try {
-          final data = jsonDecode(chunk);
-          if (data['message'] != null && data['message']['content'] != null) {
-            final text = data['message']['content'][0]['text'] as String;
-            accumulatedContent += text;
-            
-            state = [
-              ...state.sublist(0, assistantMessageIndex),
-              ChatMessage(role: 'model', content: accumulatedContent),
-            ];
-          } else if (data['result'] != null) {
-             accumulatedContent = data['result'] as String;
-             state = [
-              ...state.sublist(0, assistantMessageIndex),
-              ChatMessage(role: 'model', content: accumulatedContent),
-            ];
-          }
-        } catch (e) {
-          print('Streaming error: $e for chunk: $chunk');
-        }
+      final data = jsonDecode(response.body);
+      final result = data['result'];
+      if (result != null && result['responseMessage'] != null) {
+        final text = result['responseMessage'] as String;
+        state = [
+          ...state.sublist(0, assistantMessageIndex),
+          ChatMessage(role: 'model', content: text),
+        ];
+      } else {
+        state = [
+          ...state.sublist(0, assistantMessageIndex),
+          ChatMessage(role: 'model', content: 'Error: Received unexpected response format.'),
+        ];
       }
     } catch (e) {
       state = [

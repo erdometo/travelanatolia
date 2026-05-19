@@ -5,7 +5,6 @@ class StitchButton extends StatelessWidget {
   final String label;
   final VoidCallback onPressed;
   final bool isPrimary;
-  final bool isOutlined;
   final IconData? icon;
   final double? width;
 
@@ -14,7 +13,6 @@ class StitchButton extends StatelessWidget {
     required this.label,
     required this.onPressed,
     this.isPrimary = true,
-    this.isOutlined = false,
     this.icon,
     this.width,
   });
@@ -23,56 +21,36 @@ class StitchButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     
-    if (isOutlined) {
-      return SizedBox(
-        width: width,
-        child: OutlinedButton(
-          onPressed: onPressed,
-          style: OutlinedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-            side: BorderSide(color: isPrimary ? AppColors.primary : AppColors.outline),
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-          ),
-          child: _buildContent(isPrimary ? AppColors.primary : AppColors.onSurface),
-        ),
-      );
-    }
-
     return SizedBox(
-      width: width,
+      width: width ?? double.infinity,
+      height: 60,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: isPrimary ? AppColors.primary : AppColors.secondary,
           foregroundColor: Colors.white,
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           elevation: 0,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+          padding: const EdgeInsets.symmetric(horizontal: 24),
         ),
-        child: _buildContent(Colors.white),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if (icon != null) ...[
+              Icon(icon, size: 20, color: Colors.white),
+              const SizedBox(width: 12),
+            ],
+            Text(
+              label.toUpperCase(),
+              style: theme.textTheme.labelLarge?.copyWith(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 2,
+              ),
+            ),
+          ],
+        ),
       ),
-    );
-  }
-
-  Widget _buildContent(Color textColor) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        if (icon != null) ...[
-          Icon(icon, size: 20, color: textColor),
-          const SizedBox(width: 8),
-        ],
-        Text(
-          label.toUpperCase(),
-          style: TextStyle(
-            color: textColor,
-            fontSize: 14,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 1.2,
-          ),
-        ),
-      ],
     );
   }
 }

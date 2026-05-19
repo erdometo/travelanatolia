@@ -7,6 +7,7 @@ class InventoryItem {
   final String category;
   final String location;
   final num price;
+  final String? imageUrl;
 
   InventoryItem({
     required this.id,
@@ -15,6 +16,7 @@ class InventoryItem {
     required this.category,
     required this.location,
     required this.price,
+    this.imageUrl,
   });
 
   factory InventoryItem.fromFirestore(DocumentSnapshot doc) {
@@ -26,6 +28,7 @@ class InventoryItem {
       category: data['category'] ?? '',
       location: data['location'] ?? '',
       price: data['price'] ?? 0,
+      imageUrl: data['imageUrl'],
     );
   }
 }
