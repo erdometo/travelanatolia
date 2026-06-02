@@ -10,6 +10,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:http/http.dart' as http;
 import 'package:travelanatolia/ui/theme.dart';
 import 'package:travelanatolia/ui/widgets/glass_panel.dart';
+import 'package:travelanatolia/config.dart';
 
 class OnboardingScreen extends ConsumerStatefulWidget {
   const OnboardingScreen({super.key});
@@ -78,7 +79,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
         try {
           // 1. Analyze profile with Agentic-Core
           final idToken = await user.getIdToken();
-          final baseUrl = kDebugMode ? 'http://192.168.1.6:4000' : 'https://your-production-url';
+          final baseUrl = kDebugMode ? AppConfig.backendBaseUrl : 'https://your-production-url';
           final url = Uri.parse('$baseUrl/analyzeProfileFlow');
           
           final response = await http.post(
@@ -99,10 +100,36 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
             }),
           );
 
-          if (response.statusCode != 200) {
-            debugPrint('Error from analyzeProfileFlow: ${response.statusCode} - ${response.body}');
-          } else {
+          Map<String, dynamic>? structuredProfile;
+          if (response.statusCode == 200) {
             debugPrint('Successfully analyzed profile with Agentic-Core');
+            try {
+              final responseData = jsonDecode(response.body);
+              structuredProfile = responseData['result'] as Map<String, dynamic>?;
+            } catch (e) {
+              debugPrint('Error parsing analyzeProfileFlow response: $e');
+            }
+          } else {
+            debugPrint('Error from analyzeProfileFlow: ${response.statusCode} - ${response.body}');
+          }
+
+          // Fallback structured profile if Agentic-Core was unreachable or failed
+          if (structuredProfile == null) {
+            debugPrint('Using local fallback structured profile');
+            structuredProfile = {
+              'userId': user.uid,
+              'fullName': user.displayName ?? 'Anatolian Traveler',
+              'travelStyle': _answers['travelStyle'] ?? 'Adventure',
+              'budgetRange': _answers['budget'] ?? 'Luxury',
+              'companion': _answers['companion'] ?? 'Solo',
+              'interests': (_answers['activities'] ?? '')
+                  .split(',')
+                  .map((e) => e.trim().toLowerCase())
+                  .where((e) => e.isNotEmpty)
+                  .toList(),
+              'personaDescription': '${user.displayName ?? 'Traveler'} is a enthusiast of ${_answers['travelStyle']?.toLowerCase() ?? 'adventure'} travel. They love ${_answers['activities'] ?? 'exploring Anatolia'} and prefer ${_answers['budget']?.toLowerCase() ?? 'moderate'} budget options.',
+              'createdAt': DateTime.now().toIso8601String(),
+            };
           }
 
           // 2. Persist locally to Firebase for the auth-guard redirect sync
@@ -118,6 +145,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
           await FirebaseFirestore.instance.collection('users').doc(user.uid).set({
             'identityProfileUpdated': true,
             'latestOnboardingData': _answers,
+            'profile': structuredProfile,
             'lastUpdatedAt': FieldValue.serverTimestamp(),
           }, SetOptions(merge: true));
         } catch (e) {

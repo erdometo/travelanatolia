@@ -7,6 +7,7 @@ import 'package:cloud_functions/cloud_functions.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:travelanatolia/router.dart';
 import 'package:travelanatolia/ui/theme.dart';
+import 'package:travelanatolia/config.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -18,10 +19,10 @@ void main() async {
 
   if (kDebugMode) {
     try {
-      FirebaseFirestore.instance.useFirestoreEmulator('192.168.1.6', 8080);
-      await FirebaseAuth.instance.useAuthEmulator('192.168.1.6', 9099);
-      FirebaseFunctions.instanceFor(region: 'europe-west3').useFunctionsEmulator('192.168.1.6', 5001);
-      print('Connected to Firebase Emulators at 192.168.1.6');
+      FirebaseFirestore.instance.useFirestoreEmulator(AppConfig.emulatorHost, 8080);
+      await FirebaseAuth.instance.useAuthEmulator(AppConfig.emulatorHost, 9099);
+      FirebaseFunctions.instanceFor(region: 'europe-west3').useFunctionsEmulator(AppConfig.emulatorHost, 5001);
+      print('Connected to Firebase Emulators at ${AppConfig.emulatorHost}');
     } catch (e) {
       print('Error connecting to emulators: $e');
     }

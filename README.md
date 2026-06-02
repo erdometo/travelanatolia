@@ -88,7 +88,7 @@ Follow these step-by-step instructions to get the mobile client compiling and ru
 
 *   [Flutter SDK](https://docs.flutter.dev/get-started/install) v3.11.0 or higher
 *   [Firebase CLI](https://firebase.google.com/docs/cli) installed and authenticated
-*   A running instance of [Agentic-Core Backend](../Agentic-Core/README.md) (on Port `4000`)
+*   A running instance of [Agentic-Core Backend](../Agentic-Core/README.md) (on Port `4005`)
 
 ### 1. Install Dependencies
 
@@ -100,15 +100,17 @@ flutter pub get
 
 ### 2. Configure Firebase Emulator Settings
 
-To enable testing on physical devices or local emulators, the app directs authentication and Firestore traffic locally. Verify the IP addresses inside [lib/main.dart](file:///c:/Users/ASUS/Desktop/travelanatolia/APP/lib/main.dart):
+All network configuration is centralized in [`lib/config.dart`](lib/config.dart). Update the `emulatorHost` constant to match your development machine's LAN IP:
 
 ```dart
-// lib/main.dart
-const String localEmulatorHost = '192.168.1.6'; // Replace with your LAN IP or 'localhost'
-
-FirebaseFirestore.instance.useFirestoreEmulator(localEmulatorHost, 8080);
-await FirebaseAuth.instance.useAuthEmulator(localEmulatorHost, 9099);
+// lib/config.dart
+class AppConfig {
+  static const String emulatorHost = '192.168.1.6'; // Replace with your LAN IP or 'localhost'
+  static const String backendBaseUrl = 'http://$emulatorHost:4005';
+}
 ```
+
+The emulator host is consumed by `main.dart` (Auth & Firestore emulators), `onboarding_screen.dart` (profile analyzer), and `assistant_provider.dart` (ANA concierge).
 
 > [!IMPORTANT]
 > Ensure your Flutter device/emulator and your development machine are connected to the same local network (Wi-Fi) if you are testing on a physical iOS or Android device.
@@ -144,7 +146,7 @@ flutter analyze
 ### Decoupled Firebase Architecture
 
 > [!NOTE]
-> All legacy Cloud Functions previously located in `firebase/functions/` have been fully deprecated and removed. All intelligent multi-agent tasks, Zod parsers, and Neo4j graph operations are now cleanly offloaded to the [Agentic-Core Backend](../Agentic-Core/README.md) server running on port `4000`.
+> All legacy Cloud Functions previously located in `firebase/functions/` have been fully deprecated and removed. All intelligent multi-agent tasks, Zod parsers, and Neo4j graph operations are now cleanly offloaded to the [Agentic-Core Backend](../Agentic-Core/README.md) server running on port `4005`.
 
 ---
 
@@ -155,6 +157,12 @@ flutter analyze
 - [x] Migrate onboarding quiz to communicate with the `analyzeProfileFlow` endpoint.
 - [x] Rework the ANA AI assistant provider to utilize synchronous REST calls to `travelAssistantFlow`.
 - [x] Fix and resolve all deprecated icons and static code warnings.
+- [x] Centralize emulator/backend config in `lib/config.dart`.
+- [x] Implement real email/password authentication with display name customization.
+- [x] Add onboarding route guard forcing un-onboarded users to the quiz.
+- [x] Persist itinerary image URLs for timeline rendering.
+- [x] Replace broken cloud function seeder with client-side Firestore batch writer.
+- [x] Add self-healing local fallback profile when Agentic-Core is unreachable.
 - [ ] Add offline support for browsing cached travel itineraries.
 - [ ] Implement local push notification cues for booking confirmations.
 - [ ] Incorporate interactive Google Map views for travel points of interest.

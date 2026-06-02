@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
-import 'package:cloud_functions/cloud_functions.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:travelanatolia/ui/theme.dart';
 import 'package:travelanatolia/features/explore/explore_provider.dart';
 import 'package:travelanatolia/features/explore/models/inventory_item.dart';
@@ -41,12 +41,10 @@ class ExploreScreen extends ConsumerWidget {
                   icon: const Icon(LucideIcons.databaseBackup, color: AppColors.primary),
                   onPressed: () async {
                     try {
-                      await FirebaseFunctions.instanceFor(region: 'europe-west3')
-                          .httpsCallable('seedDatabase')
-                          .call();
+                      await _seedDatabase(context);
                       if (context.mounted) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('World populated.')),
+                          const SnackBar(content: Text('World populated locally.')),
                         );
                       }
                     } catch (e) {
@@ -138,6 +136,100 @@ class ExploreScreen extends ConsumerWidget {
         }).toList(),
       ),
     );
+  }
+
+  Future<void> _seedDatabase(BuildContext context) async {
+    final firestore = FirebaseFirestore.instance;
+    final batch = firestore.batch();
+
+    final List<Map<String, dynamic>> experiences = [
+      {
+        'id': 'exp_balloon_cappadocia',
+        'title': 'Cappadocia Hot Air Balloon Flight',
+        'description': 'Float gently over Cappadocia\'s fairy chimneys at sunrise. Experience a panoramic 360-degree view of the dramatic rock formations followed by a traditional champagne toast.',
+        'category': 'Tours',
+        'location': 'Göreme, Cappadocia',
+        'price': 250,
+        'imageUrl': 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=600',
+      },
+      {
+        'id': 'exp_goreme_museum',
+        'title': 'Göreme Open-Air Museum Cave Church Tour',
+        'description': 'Explore a vast monastic complex of rock-cut churches, chapels, and monasteries, featuring beautifully preserved Byzantine frescoes dating from the 10th to 12th centuries.',
+        'category': 'Tours',
+        'location': 'Göreme, Cappadocia',
+        'price': 30,
+        'imageUrl': 'https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&q=80&w=600',
+      },
+      {
+        'id': 'exp_cooking_class',
+        'title': 'Traditional Anatolian Cooking Class & Wine Tasting',
+        'description': 'Learn to prepare traditional home-cooked Turkish meals in a cave kitchen, using fresh, locally sourced ingredients. Paired with fine local Cappadocia wines.',
+        'category': 'Workshops',
+        'location': 'Uçhisar, Cappadocia',
+        'price': 85,
+        'imageUrl': 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=600',
+      },
+      {
+        'id': 'exp_turkish_hamam',
+        'title': 'Historic Turkish Bath (Hamam) Experience',
+        'description': 'Pamper yourself with a luxurious foam massage and exfoliating scrub inside a beautiful, dome-ceilinged Ottoman-era bathhouse built in the 16th century.',
+        'category': 'Boutique Hotels',
+        'location': 'Sultanahmet, Istanbul',
+        'price': 90,
+        'imageUrl': 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=600',
+      },
+      {
+        'id': 'exp_bosphorus_sunset',
+        'title': 'Luxury Bosphorus Sunset Yacht Cruise',
+        'description': 'Sail along the Bosphorus Strait dividing Europe and Asia. Enjoy stunning sunset views of Istanbul\'s historic mansions, palaces, and minarets with refreshments.',
+        'category': 'Tours',
+        'location': 'Beşiktaş, Istanbul',
+        'price': 120,
+        'imageUrl': 'https://images.unsplash.com/photo-1505262890022-02914d5f665a?auto=format&fit=crop&q=80&w=600',
+      },
+      {
+        'id': 'exp_hiking_rose_valley',
+        'title': 'Guided Hiking Tour of Rose & Red Valleys',
+        'description': 'Hike through Cappadocia\'s most colorful valleys, discovering hidden rock-cut pigeon houses, vineyards, and ancient churches along the way. Includes a sunset viewpoint finish.',
+        'category': 'Tours',
+        'location': 'Cavusin, Cappadocia',
+        'price': 45,
+        'imageUrl': 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=600',
+      },
+      {
+        'id': 'exp_derinkuyu_underground',
+        'title': 'Derinkuyu Deep Underground City Exploration',
+        'description': 'Descend into Turkey\'s deepest excavated underground city, which once housed up to 20,000 people fleeing persecution. Explore ventilation shafts, stables, and chapels.',
+        'category': 'Tours',
+        'location': 'Derinkuyu, Cappadocia',
+        'price': 40,
+        'imageUrl': 'https://images.unsplash.com/photo-1447069387593-a5de0862481e?auto=format&fit=crop&q=80&w=600',
+      },
+      {
+        'id': 'exp_fine_dining',
+        'title': 'Rooftop Fine Dining at Mikla',
+        'description': 'Savor a multi-course New Anatolian tasting menu featuring cutting-edge culinary techniques, served alongside breath-taking panoramic views of the illuminated Istanbul skyline.',
+        'category': 'Fine Dining',
+        'location': 'Beyoğlu, Istanbul',
+        'price': 180,
+        'imageUrl': 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=600',
+      },
+    ];
+
+    for (var exp in experiences) {
+      final docRef = firestore.collection('inventory').doc(exp['id'] as String);
+      batch.set(docRef, {
+        'title': exp['title'],
+        'description': exp['description'],
+        'category': exp['category'],
+        'location': exp['location'],
+        'price': exp['price'],
+        'imageUrl': exp['imageUrl'],
+      });
+    }
+
+    await batch.commit();
   }
 }
 

@@ -15,8 +15,18 @@ class LoginScreen extends ConsumerStatefulWidget {
 
 class _LoginScreenState extends ConsumerState<LoginScreen> {
   bool _showEmailFields = false;
+  bool _isSignUpMode = false;
+  final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -90,16 +100,26 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                           const SizedBox(height: 48),
                           StitchButton(
                             label: 'BEGIN YOUR JOURNEY',
-                            onPressed: () {
-                              ref.read(authProvider.notifier).signInAnonymously();
+                            onPressed: () async {
+                              final localContext = context;
+                              final error = await ref.read(authProvider.notifier).signInAnonymously();
+                              if (!localContext.mounted) return;
+                              if (error != null) {
+                                ScaffoldMessenger.of(localContext).showSnackBar(
+                                  SnackBar(content: Text('Auth Error: $error')),
+                                );
+                              }
                             },
                           ),
                           const SizedBox(height: 16),
                           Center(
                             child: TextButton(
-                              onPressed: () => setState(() => _showEmailFields = true),
+                              onPressed: () => setState(() {
+                                _showEmailFields = true;
+                                _isSignUpMode = false;
+                              }),
                               child: Text(
-                                'OR SIGN IN WITH EMAIL',
+                                'SIGN IN / SIGN UP WITH EMAIL',
                                 style: theme.textTheme.labelLarge?.copyWith(color: Colors.white70),
                               ),
                             ),
@@ -118,12 +138,30 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                             const SizedBox(width: 24),
                             _SocialIconButton(
                               icon: Icons.g_mobiledata, 
-                              onTap: () => ref.read(authProvider.notifier).signInWithGoogle(),
+                              onTap: () async {
+                                final localContext = context;
+                                final error = await ref.read(authProvider.notifier).signInWithGoogle();
+                                if (!localContext.mounted) return;
+                                if (error != null) {
+                                  ScaffoldMessenger.of(localContext).showSnackBar(
+                                    SnackBar(content: Text('Auth Error: $error')),
+                                  );
+                                }
+                              },
                             ),
                             const SizedBox(width: 24),
                             _SocialIconButton(
                               icon: Icons.apple, 
-                              onTap: () {},
+                              onTap: () async {
+                                final localContext = context;
+                                final error = await ref.read(authProvider.notifier).signInWithApple();
+                                if (!localContext.mounted) return;
+                                if (error != null) {
+                                  ScaffoldMessenger.of(localContext).showSnackBar(
+                                    SnackBar(content: Text('Auth Error: $error')),
+                                  );
+                                }
+                              },
                             ),
                           ],
                         ),
@@ -152,6 +190,14 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   Widget _buildEmailForm(ThemeData theme) {
     return Column(
       children: [
+        if (_isSignUpMode) ...[
+          TextField(
+            controller: _nameController,
+            style: const TextStyle(color: Colors.white),
+            decoration: _inputDecoration('Full Name', LucideIcons.user),
+          ),
+          const SizedBox(height: 16),
+        ],
         TextField(
           controller: _emailController,
           style: const TextStyle(color: Colors.white),
@@ -166,16 +212,52 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
         ),
         const SizedBox(height: 24),
         StitchButton(
-          label: 'SIGN IN',
-          onPressed: () {
-            ref.read(authProvider.notifier).signInWithEmail(
-              _emailController.text,
-              _passwordController.text,
-            );
+          label: _isSignUpMode ? 'CREATE ACCOUNT' : 'SIGN IN',
+          onPressed: () async {
+            final email = _emailController.text.trim();
+            final password = _passwordController.text.trim();
+            final name = _nameController.text.trim();
+            
+            if (email.isEmpty || password.isEmpty || (_isSignUpMode && name.isEmpty)) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Please fill in all fields.')),
+              );
+              return;
+            }
+            
+            final localContext = context;
+            final String? error;
+            if (_isSignUpMode) {
+              error = await ref.read(authProvider.notifier).signUpWithEmailAndName(email, password, name);
+            } else {
+              error = await ref.read(authProvider.notifier).signInWithEmail(email, password);
+            }
+            
+            if (!localContext.mounted) return;
+            if (error != null) {
+              ScaffoldMessenger.of(localContext).showSnackBar(
+                SnackBar(content: Text('Auth Error: $error')),
+              );
+            }
           },
         ),
+        const SizedBox(height: 12),
         TextButton(
-          onPressed: () => setState(() => _showEmailFields = false),
+          onPressed: () {
+            setState(() {
+              _isSignUpMode = !_isSignUpMode;
+            });
+          },
+          child: Text(
+            _isSignUpMode ? 'ALREADY HAVE AN ACCOUNT? SIGN IN' : 'DON\'T HAVE AN ACCOUNT? SIGN UP',
+            style: theme.textTheme.labelLarge?.copyWith(color: Colors.white70),
+          ),
+        ),
+        TextButton(
+          onPressed: () => setState(() {
+            _showEmailFields = false;
+            _isSignUpMode = false;
+          }),
           child: const Text('Back', style: TextStyle(color: Colors.white60)),
         ),
       ],

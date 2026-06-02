@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:http/http.dart' as http;
+import 'package:travelanatolia/config.dart';
 
 class ChatMessage {
   final String role;
@@ -28,9 +29,9 @@ class AssistantNotifier extends Notifier<List<ChatMessage>> {
     try {
       final idToken = await user.getIdToken();
       
-      // Use local Agentic-Core port 4000 in debug mode
+      // Use local Agentic-Core port 4005 in debug mode
       final baseUrl = kDebugMode 
-        ? 'http://192.168.1.6:4000' 
+        ? AppConfig.backendBaseUrl 
         : 'https://europe-west3-travelanatolia-prod.cloudfunctions.net'; // Fallback / production URL
       
       final url = Uri.parse('$baseUrl/travelAssistantFlow');

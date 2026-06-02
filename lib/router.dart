@@ -9,20 +9,55 @@ import 'package:travelanatolia/features/profile/profile_screen.dart';
 import 'package:travelanatolia/features/itinerary/itinerary_screen.dart';
 import 'package:travelanatolia/ui/scaffold_with_nav_bar.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+final onboardingCompletedProvider = StreamProvider<bool>((ref) {
+  final user = ref.watch(authProvider);
+  if (user == null) return Stream.value(false);
+  return FirebaseFirestore.instance
+      .collection('users')
+      .doc(user.uid)
+      .snapshots()
+      .map((snapshot) {
+        if (!snapshot.exists) return false;
+        final data = snapshot.data();
+        return data?['identityProfileUpdated'] == true;
+      });
+});
 
 final routerProvider = Provider<GoRouter>((ref) {
   return GoRouter(
     initialLocation: '/',
-    // Use the authState to trigger re-evaluations
+    // Use the authState and onboardingState to trigger re-evaluations
     refreshListenable: _AuthListenable(ref),
     redirect: (context, state) {
       final isLoggedIn = ref.read(authProvider) != null;
       final isLoggingIn = state.matchedLocation == '/login';
+      final isOnboarding = state.matchedLocation == '/onboarding';
 
-      print('Router Redirect: isLoggedIn=$isLoggedIn, location=${state.matchedLocation}');
+      final onboardingState = ref.read(onboardingCompletedProvider);
+      final hasCompletedOnboarding = onboardingState.value ?? false;
 
-      if (!isLoggedIn && !isLoggingIn) return '/login';
-      if (isLoggedIn && isLoggingIn) return '/';
+      debugPrint('Router Redirect: isLoggedIn=$isLoggedIn, hasCompletedOnboarding=$hasCompletedOnboarding, location=${state.matchedLocation}');
+
+      if (!isLoggedIn) {
+        if (!isLoggingIn) return '/login';
+        return null;
+      }
+
+      // Logged in
+      if (isLoggingIn) {
+        return hasCompletedOnboarding ? '/' : '/onboarding';
+      }
+
+      if (!hasCompletedOnboarding && !isOnboarding) {
+        return '/onboarding';
+      }
+
+      if (hasCompletedOnboarding && isOnboarding) {
+        return '/';
+      }
+
       return null;
     },
     routes: [
@@ -64,6 +99,11 @@ final routerProvider = Provider<GoRouter>((ref) {
 class _AuthListenable extends ChangeNotifier {
   _AuthListenable(Ref ref) {
     ref.listen(authProvider, (previous, next) {
+      debugPrint('Auth state changed, updating router');
+      notifyListeners();
+    });
+    ref.listen(onboardingCompletedProvider, (previous, next) {
+      debugPrint('Onboarding state changed, updating router');
       notifyListeners();
     });
   }

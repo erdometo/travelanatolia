@@ -38,6 +38,7 @@ class ItineraryActions {
       'category': item.category,
       'location': item.location,
       'price': item.price,
+      'imageUrl': item.imageUrl,
       'addedAt': FieldValue.serverTimestamp(),
     });
   }
